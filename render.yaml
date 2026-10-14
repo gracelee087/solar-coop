@@ -1,0 +1,14 @@
+# Render Blueprint for the public read-only demo (free plan). No PayPal or Gemini keys are set here:
+# the hosted desk shows the archived sandbox evidence and saved AI agent run; production refuses writes.
+services:
+  - type: web
+    name: solar-coop
+    runtime: node
+    plan: free
+    branch: main
+    rootDir: paypal-solar
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"

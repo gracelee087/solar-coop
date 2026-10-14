@@ -1,0 +1,95 @@
+{
+  "run": "2026-10-13T22-10-11-802Z",
+  "inspected": {
+    "caseId": "3a7335c1-b5c2-4b70-b6b7-6e8f2cf67699",
+    "environment": "simulated",
+    "state": "needs_review",
+    "invoice": null,
+    "documentSha256": "e07606b6d4ffcab73be096fea6b4aaa3a0d4c243f639b9fed00598939852f9d2",
+    "correction": null,
+    "extraction": {
+      "correction": {
+        "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+        "seller": "Anna",
+        "buyer": "Ben",
+        "period": "2026-06",
+        "currency": "EUR",
+        "correctedTotal": "13,00",
+        "final": false,
+        "quotes": {
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "period": "2026-06",
+          "currency": "EUR",
+          "correctedTotal": "13,00",
+          "final": "NICHT endgültig"
+        }
+      },
+      "raw": "{\n  \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n  \"seller\": \"Anna\",\n  \"buyer\": \"Ben\",\n  \"period\": \"2026-06\",\n  \"currency\": \"EUR\",\n  \"correctedTotal\": \"13,00\",\n  \"final\": false,\n  \"quotes\": {\n    \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n    \"seller\": \"Anna\",\n    \"buyer\": \"Ben\",\n    \"period\": \"2026-06\",\n    \"currency\": \"EUR\",\n    \"correctedTotal\": \"13,00\",\n    \"final\": \"NICHT endgültig\"\n  }\n}",
+      "model": "gemma4:e4b",
+      "mode": "local_model",
+      "elapsedMs": 88626
+    },
+    "correctedCents": null,
+    "paidCents": null,
+    "returnedCents": 0,
+    "differenceCents": null,
+    "approvalToken": null,
+    "refundId": null,
+    "problems": [
+      "Correction is not final"
+    ],
+    "events": [],
+    "explanation": "Correction is not final"
+  },
+  "final": {
+    "caseId": "3a7335c1-b5c2-4b70-b6b7-6e8f2cf67699",
+    "environment": "simulated",
+    "state": "needs_review",
+    "invoice": null,
+    "documentSha256": "e07606b6d4ffcab73be096fea6b4aaa3a0d4c243f639b9fed00598939852f9d2",
+    "correction": null,
+    "extraction": {
+      "correction": {
+        "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+        "seller": "Anna",
+        "buyer": "Ben",
+        "period": "2026-06",
+        "currency": "EUR",
+        "correctedTotal": "13,00",
+        "final": false,
+        "quotes": {
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "period": "2026-06",
+          "currency": "EUR",
+          "correctedTotal": "13,00",
+          "final": "NICHT endgültig"
+        }
+      },
+      "raw": "{\n  \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n  \"seller\": \"Anna\",\n  \"buyer\": \"Ben\",\n  \"period\": \"2026-06\",\n  \"currency\": \"EUR\",\n  \"correctedTotal\": \"13,00\",\n  \"final\": false,\n  \"quotes\": {\n    \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n    \"seller\": \"Anna\",\n    \"buyer\": \"Ben\",\n    \"period\": \"2026-06\",\n    \"currency\": \"EUR\",\n    \"correctedTotal\": \"13,00\",\n    \"final\": \"NICHT endgültig\"\n  }\n}",
+      "model": "gemma4:e4b",
+      "mode": "local_model",
+      "elapsedMs": 88626
+    },
+    "correctedCents": null,
+    "paidCents": null,
+    "returnedCents": 0,
+    "differenceCents": null,
+    "approvalToken": null,
+    "refundId": null,
+    "problems": [
+      "Correction is not final"
+    ],
+    "events": [],
+    "explanation": "Correction is not final"
+  },
+  "paymentRequests": 0,
+  "humanApprovals": 0,
+  "approvalSource": "scripted test approval; no human participant",
+  "humanElapsedMs": null,
+  "expected": "needs_review",
+  "success": true
+}

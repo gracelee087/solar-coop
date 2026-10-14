@@ -1,0 +1,24 @@
+{
+  "correction": {
+    "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+    "seller": "Anna",
+    "buyer": "Ben",
+    "period": "2026-06",
+    "currency": "EUR",
+    "correctedTotal": "13,00",
+    "final": true,
+    "quotes": {
+      "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+      "seller": "Anna",
+      "buyer": "Ben",
+      "period": "2026-06",
+      "currency": "EUR",
+      "correctedTotal": "13,00",
+      "final": "true"
+    }
+  },
+  "raw": "{\"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\", \"seller\": \"Anna\", \"buyer\": \"Ben\", \"period\": \"2026-06\", \"currency\": \"EUR\", \"correctedTotal\": \"13,00\", \"final\": true, \"quotes\": {\"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\", \"seller\": \"Anna\", \"buyer\": \"Ben\", \"period\": \"2026-06\", \"currency\": \"EUR\", \"correctedTotal\": \"13,00\", \"final\": \"true\"}}",
+  "model": "gemma3:4b",
+  "mode": "local_model",
+  "elapsedMs": 28392
+}

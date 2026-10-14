@@ -1,0 +1,597 @@
+{
+  "note": "Agreed terms per settlement key, written by scripts/agree.ts when a negotiation ends. The settlement reads only these records. A saved agreement is never overwritten.",
+  "agreements": {
+    "ES-202606-P1-H1": {
+      "settlementKey": "ES-202606-P1-H1",
+      "period": "2026-06",
+      "producer": {
+        "id": "p1",
+        "name": "Rooftop PV (Haus 12)"
+      },
+      "neighbour": {
+        "id": "h1",
+        "name": "Haus 10",
+        "allocationKey": 0.3
+      },
+      "priceCt": 12.4,
+      "basis": {
+        "expectedSharedKWh": 91.62,
+        "weatherYears": "2005–2022",
+        "window": {
+          "floorCt": 9.42,
+          "ceilingCt": 16.26,
+          "viable": true
+        }
+      },
+      "negotiation": {
+        "rounds": 10,
+        "sources": [
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          }
+        ],
+        "offers": [
+          {
+            "round": 1,
+            "from": "producer",
+            "priceCt": 15.5,
+            "message": "Hello neighbour, let us start our solar sharing journey with a fair offer well below the regular grid price.",
+            "reason": "Starting at a high opening price to leave room for negotiation while remaining below the local utility ceiling.",
+            "concessionCt": null,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 1,
+            "from": "consumer",
+            "priceCt": 11,
+            "message": "Hello, thank you for the opening offer. Since we are on a very tight fixed income, we need a much more affordable rate to make this work for us.",
+            "reason": "Starting with a lower counteroffer allows room for gradual negotiation while protecting a strict budget.",
+            "concessionCt": null,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 2,
+            "from": "producer",
+            "priceCt": 14,
+            "message": "Thank you for sharing your situation; let us meet in the middle to keep our local solar project beneficial for both of us.",
+            "reason": "I reduced my price to show goodwill and keep the negotiations moving forward while staying well above the feed-in tariff.",
+            "concessionCt": 1.5,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 2,
+            "from": "consumer",
+            "priceCt": 11.8,
+            "message": "Thank you for the revised offer, but as pensioners we still need a slightly lower price to fit our monthly expenses. Could we agree on this rate?",
+            "reason": "I increased my offer slightly to show willingness to compromise while staying close to our tight budgetary limits.",
+            "concessionCt": 0.8,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 3,
+            "from": "producer",
+            "priceCt": 12.8,
+            "message": "Hello neighbour, I understand your budget constraints and have lowered my price again to keep our local cooperation going.",
+            "reason": "I reduced my offer to support a good neighbourly relationship while staying above my minimum acceptable threshold.",
+            "concessionCt": 1.2,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 3,
+            "from": "consumer",
+            "priceCt": 12.2,
+            "message": "Hello neighbour, thank you for accommodating our situation. We have stretched our tight budget a bit further to reach this rate.",
+            "reason": "I made a small incremental concession to keep negotiations moving forward without exceeding our financial comfort zone.",
+            "concessionCt": 0.4,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 4,
+            "from": "producer",
+            "priceCt": 12.5,
+            "message": "Hello neighbour, I am making one final small step to help bridge the gap and keep our local green energy project moving forward.",
+            "reason": "I reduced my offer slightly to show goodwill and secure a mutually beneficial agreement before the deadline.",
+            "concessionCt": 0.3,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 4,
+            "from": "consumer",
+            "priceCt": 12.35,
+            "message": "Hello neighbour, we appreciate your small step and have made a tiny final adjustment from our side to make this agreement possible.",
+            "reason": "I made a very minor incremental concession to edge closer to their current figure while staying safely within our pension budget.",
+            "concessionCt": 0.15,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 5,
+            "from": "producer",
+            "priceCt": 12.4,
+            "message": "Hello neighbour, I have made a final tiny adjustment to successfully close our solar sharing agreement today.",
+            "reason": "I reduced the price slightly to ensure a friendly neighborhood agreement before the deadline.",
+            "concessionCt": 0.1,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 5,
+            "from": "consumer",
+            "priceCt": 12.4,
+            "message": "Hello neighbour, thank you for your final adjustment, and we are very happy to accept this rate to conclude our solar sharing agreement today.",
+            "reason": "Matching the final offer allows us to secure clean local energy while staying within our strict financial limits.",
+            "concessionCt": 0.05,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          }
+        ],
+        "outcome": "Haus 10 accepted 12.4 ct/kWh."
+      },
+      "agreedAt": "2026-10-13T09:48:50.093Z",
+      "note": "Demo replay: June 2026 is past, so the agreement is made now on the expected values, as it would be before supply."
+    },
+    "ES-202606-P1-H2": {
+      "settlementKey": "ES-202606-P1-H2",
+      "period": "2026-06",
+      "producer": {
+        "id": "p1",
+        "name": "Rooftop PV (Haus 12)"
+      },
+      "neighbour": {
+        "id": "h2",
+        "name": "Haus 14",
+        "allocationKey": 0.3
+      },
+      "priceCt": 12.95,
+      "basis": {
+        "expectedSharedKWh": 123.02,
+        "weatherYears": "2005–2022",
+        "window": {
+          "floorCt": 9.3,
+          "ceilingCt": 16.97,
+          "viable": true
+        }
+      },
+      "negotiation": {
+        "rounds": 9,
+        "sources": [
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.7-flash"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.7-flash"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.7-flash"
+          }
+        ],
+        "offers": [
+          {
+            "round": 1,
+            "from": "producer",
+            "priceCt": 16.5,
+            "message": "Hello neighbour, let us start our solar sharing with a fair price that beats standard grid rates while rewarding local production. How does this sound to you?",
+            "reason": "Starting safely below the market ceiling to leave enough room for meaningful concessions later.",
+            "concessionCt": null,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 1,
+            "from": "consumer",
+            "priceCt": 10.5,
+            "message": "Hello neighbour, thank you for the offer. Let us start a bit lower to ensure a fair household budget while keeping it attractive for your solar production.",
+            "reason": "I want to start the negotiation with a reasonable initial offer well below my absolute maximum to leave room for a compromise.",
+            "concessionCt": null,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 2,
+            "from": "producer",
+            "priceCt": 15,
+            "message": "Hello neighbour, I understand wanting a reasonable budget, but local solar involves installation and maintenance efforts. Let us meet closer to the middle at this rate.",
+            "reason": "Lowering the price slightly shows goodwill and a desire to maintain neighbourhood harmony while staying well above the feed-in tariff.",
+            "concessionCt": 1.5,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 2,
+            "from": "consumer",
+            "priceCt": 12,
+            "message": "Hello neighbour, thank you for moving closer. Let us bridge the gap a bit further to keep our family budget sustainable while still rewarding your investment.",
+            "reason": "I increased my offer moderately to show willingness to compromise without exceeding my comfort threshold.",
+            "concessionCt": 1.5,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 3,
+            "from": "producer",
+            "priceCt": 13.5,
+            "message": "Hello neighbour, I am happy to meet you halfway to ensure we both benefit from our local green energy. Let us agree on this fair rate.",
+            "reason": "I reduced my offer to maintain good neighbourhood relations while still exceeding the feed-in tariff.",
+            "concessionCt": 1.5,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 3,
+            "from": "consumer",
+            "priceCt": 12.75,
+            "message": "Hello neighbour, thank you for your continued willingness to compromise. Let us take another small step together to reach a mutually beneficial agreement.",
+            "reason": "I am making a modest incremental concession to bridge the gap and secure a stable energy rate for my family without exceeding our target threshold.",
+            "concessionCt": 0.75,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 4,
+            "from": "producer",
+            "priceCt": 13.1,
+            "message": "Thank you for working with me to find common ground. I am pleased to lower my proposal further so we can successfully finalize our local energy sharing agreement.",
+            "reason": "Moving closer toward the buyer's proposal demonstrates neighborly goodwill while leaving slight room for a final consensus in the concluding round.",
+            "concessionCt": 0.4,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.7-flash"
+            }
+          },
+          {
+            "round": 4,
+            "from": "consumer",
+            "priceCt": 12.95,
+            "message": "We appreciate your compromise and are very close to an agreement that benefits both our households. Would you be willing to meet right in the middle at this rate?",
+            "reason": "I am stepping forward to narrow the small remaining gap and encourage a successful agreement before the final stage.",
+            "concessionCt": 0.2,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.7-flash"
+            }
+          },
+          {
+            "round": 5,
+            "from": "producer",
+            "priceCt": 12.95,
+            "message": "Thank you for the constructive negotiation and for finding common ground. I gladly accept your proposed rate so we can finalize our solar sharing agreement together.",
+            "reason": "Accepting the neighbour's proposal in the final round successfully secures the partnership and closes the deal well above the minimum threshold.",
+            "concessionCt": 0.15,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.7-flash"
+            }
+          }
+        ],
+        "outcome": "Haus 12 accepted 12.95 ct/kWh."
+      },
+      "agreedAt": "2026-10-13T09:56:16.061Z",
+      "note": "Demo replay: June 2026 is past, so the agreement is made now on the expected values, as it would be before supply."
+    },
+    "ES-202606-P1-H3": {
+      "settlementKey": "ES-202606-P1-H3",
+      "period": "2026-06",
+      "producer": {
+        "id": "p1",
+        "name": "Rooftop PV (Haus 12)"
+      },
+      "neighbour": {
+        "id": "h3",
+        "name": "Haus 16",
+        "allocationKey": 0.2
+      },
+      "priceCt": 13.31,
+      "basis": {
+        "expectedSharedKWh": 105.87,
+        "weatherYears": "2005–2022",
+        "window": {
+          "floorCt": 9.36,
+          "ceilingCt": 16.64,
+          "viable": true
+        }
+      },
+      "negotiation": {
+        "rounds": 10,
+        "sources": [
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          },
+          {
+            "kind": "gemini",
+            "model": "gemini-3.5-flash-lite"
+          }
+        ],
+        "offers": [
+          {
+            "round": 1,
+            "from": "producer",
+            "priceCt": 15.5,
+            "message": "Hello neighbor, let us start our local energy sharing with a fair price that beats the standard utility rates for you while supporting our community solar production.",
+            "reason": "Starting high in the first round leaves enough room for gradual concessions while staying safely below the maximum ceiling.",
+            "concessionCt": null,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 1,
+            "from": "consumer",
+            "priceCt": 12,
+            "message": "Thank you for the fair opening offer, and I am very glad to support our local neighborhood solar production. Since we are just starting out, let us meet in the middle to make this local green energy sharing a great success for both of us.",
+            "reason": "I decided on a moderate starting counteroffer to signal willingness to compromise while keeping the price well below the utility rate.",
+            "concessionCt": null,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 2,
+            "from": "producer",
+            "priceCt": 14,
+            "message": "Thank you for your constructive response and for supporting our local solar community. Let us adjust our price slightly to ensure we both benefit while keeping things neighborly.",
+            "reason": "I reduced my offer to maintain momentum in the negotiation while staying well above my minimum threshold.",
+            "concessionCt": 1.5,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 2,
+            "from": "consumer",
+            "priceCt": 13,
+            "message": "Thank you for the continued cooperation and your willingness to adjust the price. Let us take another small step closer together to make this local green energy partnership work wonderfully for both of us.",
+            "reason": "I am gradually increasing my offer to meet the seller in the middle while staying well below my maximum threshold.",
+            "concessionCt": 1,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 3,
+            "from": "producer",
+            "priceCt": 13.5,
+            "message": "Thank you for the ongoing constructive dialogue and your commitment to our neighborhood project. Let us make another small adjustment to finalize a mutually beneficial agreement.",
+            "reason": "I am gradually conceding to meet the buyer halfway while ensuring the price remains comfortably above my minimum threshold and maintains good neighborly relations.",
+            "concessionCt": 0.5,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 3,
+            "from": "consumer",
+            "priceCt": 13.25,
+            "message": "Thank you for the steady progress and your cooperative spirit in this negotiation. Let us make this final small adjustment to successfully launch our local green energy partnership.",
+            "reason": "I am incrementally raising my offer to show good faith and secure the local green electricity deal before the final rounds.",
+            "concessionCt": 0.25,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 4,
+            "from": "producer",
+            "priceCt": 13.35,
+            "message": "Thank you for moving so close to a final agreement and showing such great neighborhood spirit. Let us make this tiny final step to successfully complete our local solar deal.",
+            "reason": "I am making a very small concession to secure the deal while staying safely above my minimum acceptable threshold.",
+            "concessionCt": 0.15,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 4,
+            "from": "consumer",
+            "priceCt": 13.3,
+            "message": "We are almost at the finish line now and I am very happy to make this final small step to secure our local solar partnership.",
+            "reason": "I made a tiny concession to close the remaining gap and successfully secure the local green energy deal.",
+            "concessionCt": 0.05,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 5,
+            "from": "producer",
+            "priceCt": 13.31,
+            "message": "We are indeed extremely close to the finish line, so let us take this final tiny step together to successfully seal our local green energy partnership.",
+            "reason": "Offering a micro concession demonstrates good neighborhood relations while staying just above the absolute minimum acceptable price.",
+            "concessionCt": 0.04,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          },
+          {
+            "round": 5,
+            "from": "consumer",
+            "priceCt": 13.31,
+            "message": "We have reached the finish line together, and I gladly accept your final offer to seal our wonderful local solar partnership.",
+            "reason": "I matched the final offer to successfully close the deal in the last round.",
+            "concessionCt": 0.01,
+            "adjusted": false,
+            "source": {
+              "kind": "gemini",
+              "model": "gemini-3.5-flash-lite"
+            }
+          }
+        ],
+        "outcome": "Haus 16 accepted 13.31 ct/kWh."
+      },
+      "agreedAt": "2026-10-13T10:11:32.398Z",
+      "note": "Demo replay: June 2026 is past, so the agreement is made now on the expected values, as it would be before supply."
+    }
+  }
+}

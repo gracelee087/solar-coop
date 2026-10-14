@@ -1,0 +1,1064 @@
+{
+  "generatedAt": "2026-10-14T23:31:47.092Z",
+  "note": "Source bundle from the current working tree, not a claim of a published release. See docs/VERIFICATION.md.",
+  "omitted": [
+    "core/",
+    "assistant instruction files",
+    "runtime runs/",
+    "credentials",
+    "node_modules",
+    "downloaded BDEW H25"
+  ],
+  "files": [
+    {
+      "file": "paypal-solar/src/app/allocation-chart.tsx",
+      "bytes": 2414,
+      "sha256": "7f7577ac0052b9eaf8e719307955040a1176e86be32a5717fdeef5ae72d37577"
+    },
+    {
+      "file": "paypal-solar/src/app/api/coop/decision/route.test.ts",
+      "bytes": 766,
+      "sha256": "fa8848f6da5af89959105788bd6bfed80b382dc3a5277bcf6404c60b9961b718"
+    },
+    {
+      "file": "paypal-solar/src/app/api/coop/decision/route.ts",
+      "bytes": 1021,
+      "sha256": "808683426576ef5f6011a294b486ba21d834496e035d17e274cdfa5cc10fd2e2"
+    },
+    {
+      "file": "paypal-solar/src/app/api/coop/exception-review/route.ts",
+      "bytes": 949,
+      "sha256": "309b00e3ee1a03eef0825224724266c34b55631b4d2880a414ee33d2917655ba"
+    },
+    {
+      "file": "paypal-solar/src/app/api/coop/workbench/route.test.ts",
+      "bytes": 1867,
+      "sha256": "e8c3f541ed0c074b9262372535680d72b9eba5e55f0e82ae7ad566633993b6a4"
+    },
+    {
+      "file": "paypal-solar/src/app/api/coop/workbench/route.ts",
+      "bytes": 2204,
+      "sha256": "e860cf9dd057e225592a563efb969a8dc2c80f038682a3fccb5a192c19212e3f"
+    },
+    {
+      "file": "paypal-solar/src/app/api/correction-demo/route.ts",
+      "bytes": 3380,
+      "sha256": "2ab10c3a2d25ae7195801473d4d57c063b49b34cae90c0fae18825cf4afc2ec1"
+    },
+    {
+      "file": "paypal-solar/src/app/api/invoice-status/route.ts",
+      "bytes": 478,
+      "sha256": "5863ae275f531465e521afc07f80a50195129584227f1e81cd736815c71b7117"
+    },
+    {
+      "file": "paypal-solar/src/app/api/negotiate/route.ts",
+      "bytes": 1381,
+      "sha256": "75c3924330ac8d3b44576ed721c970ad55645cf40a8fe35c4f0df3c6b8586bef"
+    },
+    {
+      "file": "paypal-solar/src/app/api/settlement-rehearsal/route.ts",
+      "bytes": 763,
+      "sha256": "4b85a2f00e37dba053e3ec8880b367ebf5e4225250baee37b1d0743e0ab1d2cf"
+    },
+    {
+      "file": "paypal-solar/src/app/api/settlement-review/route.ts",
+      "bytes": 1818,
+      "sha256": "9459d439738c9317a552761582558bb4d2b69d9af3ec5089f5f89459ca836502"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/coop-desk.tsx",
+      "bytes": 9920,
+      "sha256": "3b09b435bfe6540ee43581673108c5b9e7dfc58dd861e9b8bd15292902904ad5"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/exceptions/exception-desk.test.tsx",
+      "bytes": 3325,
+      "sha256": "e323d1fb85683bd1fae263f2c12117bf3c75afe84701abcf620fd0b732050334"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/exceptions/exception-desk.tsx",
+      "bytes": 11254,
+      "sha256": "9a138c632d2fec471e3fe84744f4ccd6381910c3cebe3379f7f8d58ad2ca783c"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/exceptions/exceptions.module.css",
+      "bytes": 6471,
+      "sha256": "2832f78ed02ac40f08725a8d1b521d5594d173d72a01012f8f8d042f373e4259"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/exceptions/page.tsx",
+      "bytes": 3336,
+      "sha256": "3fcbfb8346fc7dbd5a8cead120513467c31b0a87a5981dd0831e9b3ad10faac4"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/page.tsx",
+      "bytes": 1161,
+      "sha256": "b493d2f1893a781702decffbee4135be02652db0d1b6dec46cceb649eeb4c9bb"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/workbench.module.css",
+      "bytes": 13274,
+      "sha256": "139b5befc770a9f1999d0cbf7c2257643dac41bc4874b014992cc53b0d033e95"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/workbench.test.tsx",
+      "bytes": 1218,
+      "sha256": "e2e942e41326cfa577eed769a2b425ae99fea6d2cd83b5e81048a51fdb180138"
+    },
+    {
+      "file": "paypal-solar/src/app/coop/workbench.tsx",
+      "bytes": 29938,
+      "sha256": "983da50f1b1ef88e3d5cce2102c8512d67c18f1b66512591b15d251083d8f2f3"
+    },
+    {
+      "file": "paypal-solar/src/app/dashboard.tsx",
+      "bytes": 31098,
+      "sha256": "8c6ec444505c6838799bd0fa647d4facf5ea40b97bb127292fbab9ef5a59761e"
+    },
+    {
+      "file": "paypal-solar/src/app/demo/correction/page.tsx",
+      "bytes": 333,
+      "sha256": "4c6c5e6421b22852befe3fad33c44d801c584a70ff9581aee0831b54b6ee359d"
+    },
+    {
+      "file": "paypal-solar/src/app/demo/correction/panel.tsx",
+      "bytes": 13089,
+      "sha256": "f36079b036136ccdc91e9c1dc4a075c2f973f114d59d2c0e888329de8546fd81"
+    },
+    {
+      "file": "paypal-solar/src/app/demo/evidence/page.tsx",
+      "bytes": 3446,
+      "sha256": "18721be81b3d01ecd08eec82b40eb4373eb31d5164eb3fba612fb5e8cd74ccf2"
+    },
+    {
+      "file": "paypal-solar/src/app/demo/page.tsx",
+      "bytes": 2513,
+      "sha256": "f8e68222cb8f2696d71f1ecc902973984b28b3cf867a7456cee0edd0753341bd"
+    },
+    {
+      "file": "paypal-solar/src/app/energy/page.tsx",
+      "bytes": 1289,
+      "sha256": "c3e0b931e81238296b3762846d3b9691c8329c38230b2eaddb046e8b7c4d0232"
+    },
+    {
+      "file": "paypal-solar/src/app/favicon.ico",
+      "bytes": 25931,
+      "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932"
+    },
+    {
+      "file": "paypal-solar/src/app/globals.css",
+      "bytes": 606,
+      "sha256": "d698774970c8a96f415a81e739dfafd71aab999795eea58329159229e50b2bca"
+    },
+    {
+      "file": "paypal-solar/src/app/layout.tsx",
+      "bytes": 499,
+      "sha256": "af85e3346edd9f0fd6c9dca93925c038f3eec7920b661394bec45ed431aab0f4"
+    },
+    {
+      "file": "paypal-solar/src/app/monthly-settlement-panel.tsx",
+      "bytes": 7168,
+      "sha256": "f32cd8c2200dd9aceea73f8b8a1f0d901fd53a83ff1d479c31014cc6221ffc46"
+    },
+    {
+      "file": "paypal-solar/src/app/page.tsx",
+      "bytes": 99,
+      "sha256": "aca9b573cdf0da133ced8d0a65be50c3f8a1fa9486c9d523471f351653228d75"
+    },
+    {
+      "file": "paypal-solar/src/data/agreements.json",
+      "bytes": 24125,
+      "sha256": "b0328630e53b95e2068b4c5797c2e8c02546427a500d7f16edf792f2452e5770"
+    },
+    {
+      "file": "paypal-solar/src/data/coop-meter-2026-06.csv",
+      "bytes": 168936,
+      "sha256": "4ccf3450e662ecdb3da10fb2c05d2405e7d287546453cca8c12ae4abcae8dbac"
+    },
+    {
+      "file": "paypal-solar/src/data/issued-invoices.json",
+      "bytes": 1356,
+      "sha256": "f503c6dba33b134d15e8860ec505124375963687b37be07ab87e2cc269978e34"
+    },
+    {
+      "file": "paypal-solar/src/data/pvgis-frankfurt-2005-2022-06.json",
+      "bytes": 426554,
+      "sha256": "c1352e4776d52af94cde2d2d075ec9b05a07860f67e6950e961374cb1edd7909"
+    },
+    {
+      "file": "paypal-solar/src/data/pvgis-frankfurt-2023-06.json",
+      "bytes": 24052,
+      "sha256": "876213b4a2e206d4a27c2ab4ae65eda9a2ba7114157110709ca664daa5a1c144"
+    },
+    {
+      "file": "paypal-solar/src/data/submission/sandbox-june.json",
+      "bytes": 14658,
+      "sha256": "85ddad8fa89ff0c7785cdd557dc66240e7edb46321272dd7c0b300347ef2ac0d"
+    },
+    {
+      "file": "paypal-solar/src/lib/agreement-file.test.ts",
+      "bytes": 2032,
+      "sha256": "bcbe6bc425eefd88bcb43ea51a256fc078cb07dd32a441b112fdd14d7a205798"
+    },
+    {
+      "file": "paypal-solar/src/lib/agreement-file.ts",
+      "bytes": 1388,
+      "sha256": "7ecc7813f9c0c307e0e63e55ab2f9fb33d784f05c7065049ccc5db0f4024526c"
+    },
+    {
+      "file": "paypal-solar/src/lib/agreement.test.ts",
+      "bytes": 3979,
+      "sha256": "a7fc54b4b7ca8c07dacb40e5a16192cb929678130f9204584ea3a15f0a83f37e"
+    },
+    {
+      "file": "paypal-solar/src/lib/agreement.ts",
+      "bytes": 5123,
+      "sha256": "3f004a12e4854752bf3b08c8cc6da660814028e76c6c17a5df481ac84b57aaad"
+    },
+    {
+      "file": "paypal-solar/src/lib/allocate.test.ts",
+      "bytes": 2947,
+      "sha256": "e42154c75a10a64634492d67812da0cd0c7119268111f3e4bdac8c9c9ff24c20"
+    },
+    {
+      "file": "paypal-solar/src/lib/allocate.ts",
+      "bytes": 3672,
+      "sha256": "da932e412a00ad6113ac1ec53f9bc3355e2f7a151236ba8f2ba7c4c06460a238"
+    },
+    {
+      "file": "paypal-solar/src/lib/case-evidence.test.ts",
+      "bytes": 6959,
+      "sha256": "4e049101acf310f264adc2164a7b2768567944ea80e6bdd1148d9752956b5d9e"
+    },
+    {
+      "file": "paypal-solar/src/lib/case-evidence.ts",
+      "bytes": 3836,
+      "sha256": "7665c6cf1f4e97c2f83de3abec4d821fffac807c06beb7455bab0a42138d4875"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/agent.test.ts",
+      "bytes": 8502,
+      "sha256": "83aa1aa32d8f62da639aa7f0dcfea7522568a683afcc2a63e5f727b2b3b6cfb8"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/agent.ts",
+      "bytes": 5585,
+      "sha256": "075f9bd13bc70b96939971534c00948e15876781619282c4012f8ea843c7331f"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/allocation.ts",
+      "bytes": 5470,
+      "sha256": "19a4de6a4b781487824314fda6380a906bb431f247bb559d19c8582269247b5c"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/approval.ts",
+      "bytes": 5609,
+      "sha256": "2016acd0f809d717a6823f1ef76fb08ddc7dc149fe2752b6fcdd2fd5c9d0f978"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/coop.test.ts",
+      "bytes": 16151,
+      "sha256": "8b0954dfe3646094ae0432d0bf7db5ad126a2e09dc1bb012a58fd612a2c59b9a"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/costs.test.ts",
+      "bytes": 1060,
+      "sha256": "38c0d958bd3c79f3f1b535ed771f7c6570356bb5a0697a04ba0c1e98970f567d"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/costs.ts",
+      "bytes": 2053,
+      "sha256": "0cf3f7321a19e14a0aec0840531ad26a0ca8936de3dd9cee3044c4b007d1e8bf"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/desk.test.ts",
+      "bytes": 3975,
+      "sha256": "f0be557f6a4b11f686a61828e7153f2c80aeb5c5e7b13a6417d84194d0f5ce2c"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/desk.ts",
+      "bytes": 6940,
+      "sha256": "f591118767f9e3bd0dbab3d7fd5622deac7835ce7a477f701d16c2dfd4029f20"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exception-cases.test.ts",
+      "bytes": 1008,
+      "sha256": "3f90d0c7d8080be633fe53aa56f2cfc5f93fc6d95cd77e6f1e87c9ed610ba8bd"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exception-cases.ts",
+      "bytes": 6072,
+      "sha256": "e7a7b85dbff7cd89e08afe02fe29cbe7b3396577c34871e8f8adb7b1588b5356"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exception-desk.test.ts",
+      "bytes": 4876,
+      "sha256": "23dddeb87df83d9491413e03b9e7de13ca8f30351077741d8862a9a96db00436"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exception-desk.ts",
+      "bytes": 7668,
+      "sha256": "f111c290c0e272e87d7e5ce61da42fe1184c0f53ed119e9ff8cd64761d07fb48"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exception-holdout.test.ts",
+      "bytes": 1010,
+      "sha256": "d8f49c751d96f0a42df109f2a056c36d686e6503fbe66e8af36767735d6173cc"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exception-holdout.ts",
+      "bytes": 5008,
+      "sha256": "660ae7d8305ee79e88ceb4fd1f78ea1b64c857b7a60fbae2f04462d7ab551482"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exception-rules.ts",
+      "bytes": 1735,
+      "sha256": "74a962a357245286451b50cdffc78663fb51ce01dc7c2b0d22f3aa6b9368234d"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exceptions.test.ts",
+      "bytes": 5220,
+      "sha256": "36d847ff476bde72d273915953128050b8a340dfb089dba0710ea75a5bb72144"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/exceptions.ts",
+      "bytes": 9189,
+      "sha256": "147ceaa0c3a3b5f64bee4ec140755d1dda529fe0fce83505841be77d6c3a8e71"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/execute-saved.test.ts",
+      "bytes": 5904,
+      "sha256": "14cb0b429ee7fedebb84507d262c67edf90c44f13c958d766baae618c854d8d4"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/execute-saved.ts",
+      "bytes": 2623,
+      "sha256": "42b29d20e9d77773cb052398b8b2d37659a50c795c76145e86dbc54866021352"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/investigation-agent.test.ts",
+      "bytes": 2434,
+      "sha256": "8c560e0cf08fc9c8e571d46e71b62dcbae524e6432f5ca2339872a3e9141b990"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/investigation-agent.ts",
+      "bytes": 2828,
+      "sha256": "66db2f3a564b2442be256763f834724f6fe8206058eb470a0405e9e7256eb2ac"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/ledger.ts",
+      "bytes": 9566,
+      "sha256": "16e5690f2d7b9059c21bb77929fd450a521f651d5410ab26fdcea26cff03a4d6"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/limits.ts",
+      "bytes": 2156,
+      "sha256": "92bd4ec5b5610b0a923e6fa9d96dbf16a2d9d192e47144930f9cbfe637c9e064"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/meter-csv.ts",
+      "bytes": 3516,
+      "sha256": "672d218bd8904bc5940e8ddbb9ea87b16be1c497f117be4263a775e3a76ffd90"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/rail.ts",
+      "bytes": 5151,
+      "sha256": "6fe2b08b1320ca645201bd51120cad12e1424fd216b1be34115afaa3ab55d3c8"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/reconcile.test.ts",
+      "bytes": 3799,
+      "sha256": "94b60f03a9cdd844f273af107b64ec0f74de4fde199607557e37b301d83d97a5"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/reconcile.ts",
+      "bytes": 4250,
+      "sha256": "a006c42dd40fd46e9619eb927b2abcabd559568da596075ba66850ad099a042e"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/rehearsal.ts",
+      "bytes": 2701,
+      "sha256": "84016f23e2f6e603af93cf5726f72f7022a39dde4b24675ffc27a2b613e8a7cd"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/sample-group.ts",
+      "bytes": 2077,
+      "sha256": "ff962494e673d7644b85970b40f9db89cc07f12c2d82324210132827189e49e3"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/sandbox-accounts.ts",
+      "bytes": 944,
+      "sha256": "048b1f8be7f64a86a42c16b650cb7abfeb4029f3feba841062d49b41b48e1aae"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/state.ts",
+      "bytes": 4182,
+      "sha256": "3fc5ac67c5cf533c83575c4e8757ecc3b02229d3347fc0446e5687c814320288"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/statements.ts",
+      "bytes": 2183,
+      "sha256": "c5516e400366405194477c350c192a1ee7bf0009a0c7b58e89a29d39db34f622"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/submission-evidence.test.ts",
+      "bytes": 2688,
+      "sha256": "99ef8e89beeae23f2cf77e756c79f8a4529adf7611b4cc14c530719238fa7818"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/submission-evidence.ts",
+      "bytes": 1021,
+      "sha256": "7a8f27300c4ab217cbf04e103e3af42c9e46c5932aba9da3e5a8a3d6a28a98e5"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/tools.ts",
+      "bytes": 4175,
+      "sha256": "d9cfa9a7ad43a6533050938dc782933ebd9b893bfb497ae2a151323f17850961"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/types.ts",
+      "bytes": 2747,
+      "sha256": "2840b42e116702f912001f5f7b98ffadb03a73a263461369cabb5727f5b7e3ea"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/workbench-seed.ts",
+      "bytes": 1440,
+      "sha256": "caee877f30789016c16f626b0c53ff348d7b183342fb0370c624e2650379c923"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/workbench-types.ts",
+      "bytes": 1078,
+      "sha256": "aff679e2b511a87cf747868dc88abb8f6e9ea3dbe96a1a91971a3217f79514ed"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/workbench.test.ts",
+      "bytes": 6389,
+      "sha256": "d26712a23ee2b3079a61128d1d3b75aecae4a7f91e92b87fa2baf01ee7a2ee79"
+    },
+    {
+      "file": "paypal-solar/src/lib/coop/workbench.ts",
+      "bytes": 10590,
+      "sha256": "ab1cd8c742ad53c95d153a675bddeca35bd4f5937ea5e67e5d7ef3d7d0b7171b"
+    },
+    {
+      "file": "paypal-solar/src/lib/correction-case.test.ts",
+      "bytes": 6562,
+      "sha256": "8fec79401ef35d334e6a3489ad54781e8c7e10d9ad11194ab4862ba6cc177c96"
+    },
+    {
+      "file": "paypal-solar/src/lib/correction-case.ts",
+      "bytes": 10534,
+      "sha256": "9cceda426f6f7fe1828dcf694f33dedf8c9afa772d0380f411946e9927cfe06f"
+    },
+    {
+      "file": "paypal-solar/src/lib/correction-demo-route.test.ts",
+      "bytes": 2873,
+      "sha256": "76901f11d63ffbe30160f361c508d4223d79afb3587894f89602d1efb838fae5"
+    },
+    {
+      "file": "paypal-solar/src/lib/correction-extractor.ts",
+      "bytes": 2797,
+      "sha256": "4a1a8f27d588a9a424303f403b95fc25d1dc8708378f7a8056651004343622e6"
+    },
+    {
+      "file": "paypal-solar/src/lib/correction-fixtures.ts",
+      "bytes": 3431,
+      "sha256": "ebc585fe5ae2603f88cefedb3adbae107621749f62cb56e8f2d205a2cfb76ca3"
+    },
+    {
+      "file": "paypal-solar/src/lib/dashboard-data.ts",
+      "bytes": 1262,
+      "sha256": "aa319dc2bd7eb5164c156701d6d3c3123dc06cbae82ad12b20f752b3f0e53cba"
+    },
+    {
+      "file": "paypal-solar/src/lib/dashboard.test.ts",
+      "bytes": 11242,
+      "sha256": "087221fbbdd379cb1cb78ca880ff1b0dd812f76838f225b104da1a8e08162119"
+    },
+    {
+      "file": "paypal-solar/src/lib/dashboard.ts",
+      "bytes": 14769,
+      "sha256": "f0f3928f43970e26dfd7ffcf3d4035548a4ff1b4d786bfa924e3cdda3bbf6e25"
+    },
+    {
+      "file": "paypal-solar/src/lib/data-validation.test.ts",
+      "bytes": 6945,
+      "sha256": "c6453b09f135c7363d1077e9788ba476600a2c55757604b72050137122a1a9ed"
+    },
+    {
+      "file": "paypal-solar/src/lib/data-validation.ts",
+      "bytes": 4382,
+      "sha256": "eb955cd92a5a6b8b40eefc26b7a2e8484fccea376ba427a44c399339a9f7997b"
+    },
+    {
+      "file": "paypal-solar/src/lib/demo-group.ts",
+      "bytes": 1783,
+      "sha256": "1840685c27dfb33e06878bdf25431e9cdbdb64f7cfc7a315219edc22974bda5e"
+    },
+    {
+      "file": "paypal-solar/src/lib/explain-preview.test.ts",
+      "bytes": 4531,
+      "sha256": "8b3d553cf6f90867c4b2514f4b33c644f982df9931816e8a3abd345af93a04ea"
+    },
+    {
+      "file": "paypal-solar/src/lib/explain-preview.ts",
+      "bytes": 2696,
+      "sha256": "5c635fd9760038b62cd6dcf22b69d864e367686aba858138fa729e0d143ff9b3"
+    },
+    {
+      "file": "paypal-solar/src/lib/explain.test.ts",
+      "bytes": 1489,
+      "sha256": "075a0d5a51fab8865aeeb564d1b861ee102624b0876d34dc48e8d427a5ad9d3f"
+    },
+    {
+      "file": "paypal-solar/src/lib/explain.ts",
+      "bytes": 3785,
+      "sha256": "adf45f17bd05cf4deff1be9a1d8a7e9445ab125213c43dbbc15abb69068f48ba"
+    },
+    {
+      "file": "paypal-solar/src/lib/gemini-policy.test.ts",
+      "bytes": 1009,
+      "sha256": "7a429c635d55b3c1fe12eefbb01f65edf46bd7ac6c3c1a869263ae91d35bd003"
+    },
+    {
+      "file": "paypal-solar/src/lib/gemini-policy.ts",
+      "bytes": 3361,
+      "sha256": "9c8ed625bbddbd30778c7a1426ada4f409be17a7ee739bc2463551a7f9f2351d"
+    },
+    {
+      "file": "paypal-solar/src/lib/gemini.ts",
+      "bytes": 1049,
+      "sha256": "ea35e4454d5a0315cb3ba6f92b2baf44addfa739703ad682f167efbd467f351a"
+    },
+    {
+      "file": "paypal-solar/src/lib/invoice-status.test.ts",
+      "bytes": 3952,
+      "sha256": "c345cb338f5186bfaa2be474519d3ec3b6ab22a1dd2045c712ea241aee20c624"
+    },
+    {
+      "file": "paypal-solar/src/lib/invoice-status.ts",
+      "bytes": 2655,
+      "sha256": "f17b91fdcb38e092000305de23afa590f4a9e8c5941b05564ae0b5cadcade0f0"
+    },
+    {
+      "file": "paypal-solar/src/lib/invoice.test.ts",
+      "bytes": 3617,
+      "sha256": "c105ca59dfcee5678ae0fab4830388f40c1e29c8fe9cf9d121165e149ed31e00"
+    },
+    {
+      "file": "paypal-solar/src/lib/invoice.ts",
+      "bytes": 5551,
+      "sha256": "66de3bd730b56136e757dc7b0c8fc891ef7002d712c106eb1619d5e47212683a"
+    },
+    {
+      "file": "paypal-solar/src/lib/issued.ts",
+      "bytes": 666,
+      "sha256": "ba7fd1dd1573aeaba6e306768868b5523b136889e2e6bf2d7882100edaf29e82"
+    },
+    {
+      "file": "paypal-solar/src/lib/monthly-agent.test.ts",
+      "bytes": 5218,
+      "sha256": "44229dca88d5811935f3ad5704c6ef59e650d887f55d49b1ffae1c0edea86e16"
+    },
+    {
+      "file": "paypal-solar/src/lib/monthly-agent.ts",
+      "bytes": 3269,
+      "sha256": "7e60f674a76f16c87116dfd38e1a092497654a7539d5863af7d9a30b60da5360"
+    },
+    {
+      "file": "paypal-solar/src/lib/monthly-data.ts",
+      "bytes": 1525,
+      "sha256": "5d248b21431d1a786e466fefbdf6095bace351724d0a9a52a3bd34ca397f0d07"
+    },
+    {
+      "file": "paypal-solar/src/lib/monthly-rehearsal-route.test.ts",
+      "bytes": 1207,
+      "sha256": "39b2a2aa2c205ae59f83ef486f32f3b26b5be2b26387ae16235f74f64a4f1348"
+    },
+    {
+      "file": "paypal-solar/src/lib/monthly-rehearsal.ts",
+      "bytes": 3231,
+      "sha256": "a599f2bf7d32c033d234dc7e268b283651a690931051c5151da2d9f2a730af96"
+    },
+    {
+      "file": "paypal-solar/src/lib/monthly-settlement.test.ts",
+      "bytes": 11708,
+      "sha256": "b0fc78ea4e0b8221de16284dddf59b8801ed2c132aa5f940ee62dedb121e627e"
+    },
+    {
+      "file": "paypal-solar/src/lib/monthly-settlement.ts",
+      "bytes": 16609,
+      "sha256": "1e9f12c28b399f72dbc201f824883d8c327566d783757692ef0212206aef3ec2"
+    },
+    {
+      "file": "paypal-solar/src/lib/negotiate-handler.test.ts",
+      "bytes": 3142,
+      "sha256": "34d1baa75165b7450463b0de44130f12e996fdb1b3a2a6a590ca8fc2be49f28a"
+    },
+    {
+      "file": "paypal-solar/src/lib/negotiate-handler.ts",
+      "bytes": 2354,
+      "sha256": "a61babfa01c84bc0c18ace8f73712fdb17b48d87042982f0f17c4266a8d8a838"
+    },
+    {
+      "file": "paypal-solar/src/lib/negotiation.test.ts",
+      "bytes": 3664,
+      "sha256": "4f103754c434a1515c35040c6f29d311d3083abca7f66939d36a6ea261ee6ff4"
+    },
+    {
+      "file": "paypal-solar/src/lib/negotiation.ts",
+      "bytes": 5784,
+      "sha256": "1755a8c3f90fa906ce1163e6519f289f0e0f3d4005a32db8e67bb72270ba24fb"
+    },
+    {
+      "file": "paypal-solar/src/lib/outcome.ts",
+      "bytes": 2115,
+      "sha256": "07ddebcd46b2f943d19d8054482b83ec14ffe71c67f63f2d0dc02a66b28de645"
+    },
+    {
+      "file": "paypal-solar/src/lib/paypal-api.ts",
+      "bytes": 3679,
+      "sha256": "9475e9c9d7642604d74b473c2def525fbfe4cfeb4baca9c7ab367a10d049f93d"
+    },
+    {
+      "file": "paypal-solar/src/lib/paypal-tools.ts",
+      "bytes": 1322,
+      "sha256": "418120e68d3f92d874a87a7521b726455d83642ebcc74845719e76456f15505e"
+    },
+    {
+      "file": "paypal-solar/src/lib/pricing.test.ts",
+      "bytes": 7276,
+      "sha256": "e65bba791501dd1898842cf3f2d12b14f88ff02ea0b936357125096e4eb332c9"
+    },
+    {
+      "file": "paypal-solar/src/lib/pricing.ts",
+      "bytes": 12035,
+      "sha256": "fb63c4597dd0b4eacb88af368a42640ce7137b61bae4cdc62b0c1f2c5296338a"
+    },
+    {
+      "file": "paypal-solar/src/lib/rate-limit.test.ts",
+      "bytes": 1521,
+      "sha256": "f2e9ae5b00a3dee495c005301f9d27c76d4e26420d4d01c69badc4e1ff21bc44"
+    },
+    {
+      "file": "paypal-solar/src/lib/rate-limit.ts",
+      "bytes": 1525,
+      "sha256": "0d969b0c563baeb572b2c432df40c53fd890878fa5559706ffa2114363729947"
+    },
+    {
+      "file": "paypal-solar/src/lib/real-data-files.test.ts",
+      "bytes": 3091,
+      "sha256": "8cfcc022c93d4bbcc8ca00a1173c428aa8b708f9164b496bc0263f2a057cd4f8"
+    },
+    {
+      "file": "paypal-solar/src/lib/real-data-files.ts",
+      "bytes": 2059,
+      "sha256": "1784ede9730663d7b3d5bec0bacb8694bd1dfd447a8dc2d0ab296300392461fb"
+    },
+    {
+      "file": "paypal-solar/src/lib/real-data.test.ts",
+      "bytes": 1974,
+      "sha256": "d292b1cef78608bf73d1553702b48c3cec5053cea97bff1139246f46655979e4"
+    },
+    {
+      "file": "paypal-solar/src/lib/real-data.ts",
+      "bytes": 3481,
+      "sha256": "a7881d8dc0e17a6395d08d4fb03a74cb34ca013290e03229276527b40bc4c991"
+    },
+    {
+      "file": "paypal-solar/src/lib/rng.ts",
+      "bytes": 373,
+      "sha256": "555a6407a2eb31b8b8f843e1595aa1b16864a69b40059b9c03d858152c258f5b"
+    },
+    {
+      "file": "paypal-solar/src/lib/settlement-agent.test.ts",
+      "bytes": 7797,
+      "sha256": "97b1733ccf528f36174103f1afc537bc0ab05e60d23d5ee6d5979beb549c98ae"
+    },
+    {
+      "file": "paypal-solar/src/lib/settlement-agent.ts",
+      "bytes": 9765,
+      "sha256": "9dbcacd8838ba3c855106aceec19c3799ae6084f3cd3925f569f9d2d64575880"
+    },
+    {
+      "file": "paypal-solar/src/lib/settlement-fees.test.ts",
+      "bytes": 425,
+      "sha256": "ec4727e11fa8cc8219efcd42ff8664c3122fde44c7274cbc914d036878276804"
+    },
+    {
+      "file": "paypal-solar/src/lib/settlement-fees.ts",
+      "bytes": 811,
+      "sha256": "52bbbfa19087fb6d6d14e5506175585f04ba400aa8c049ecd9bfbf920d2f795b"
+    },
+    {
+      "file": "paypal-solar/src/lib/settlement-review.test.ts",
+      "bytes": 2961,
+      "sha256": "82d2080a9075af9e54659a154877bb8cca38cf38f42fa58faabe7f888fd6b50f"
+    },
+    {
+      "file": "paypal-solar/src/lib/settlement-review.ts",
+      "bytes": 7345,
+      "sha256": "50e55b4d6eb1359d2c14ba7d1d4abb286ba5c95c1457f44c3a53949a4e3784e1"
+    },
+    {
+      "file": "paypal-solar/src/lib/simulate.ts",
+      "bytes": 2253,
+      "sha256": "cac49cb8c1d3dc2d90aeb1b3769b2d5a28fa672d07f4b2fb457ea26d71a94376"
+    },
+    {
+      "file": "paypal-solar/src/lib/tariffs.ts",
+      "bytes": 5754,
+      "sha256": "7a435c07e91340b163bd4861f158c8f8cebdabcea46cf9162fe4b88810449692"
+    },
+    {
+      "file": "paypal-solar/src/lib/types.ts",
+      "bytes": 1061,
+      "sha256": "c91c3f0bd48785f6fca2c067e0a6d66b5ccdd8ad4aca3521a7f636e1c76f726d"
+    },
+    {
+      "file": "paypal-solar/scripts/agree.ts",
+      "bytes": 4250,
+      "sha256": "24ccba802a471dff15cdaab66d8d356260885de41d6f7757b27ebffb470672c0"
+    },
+    {
+      "file": "paypal-solar/scripts/cancel-invoice.ts",
+      "bytes": 730,
+      "sha256": "375278540d487bb4c301648f5388e6af3003c75175f5167dfcc4166f172dc541"
+    },
+    {
+      "file": "paypal-solar/scripts/check-invoice.ts",
+      "bytes": 704,
+      "sha256": "2e32b54fcd9033d9be54808dfc2beef197ca485fcf29303892ff8f3cf5ab9eb3"
+    },
+    {
+      "file": "paypal-solar/scripts/coop-sample.ts",
+      "bytes": 1913,
+      "sha256": "a6c6373f5dca6edfd23357cc0616ae18897fd2f49ebb7af8cc8fb3e4f10013b9"
+    },
+    {
+      "file": "paypal-solar/scripts/coop.ts",
+      "bytes": 13140,
+      "sha256": "43ecf1a080f374d4edc9462167c23127d45fc2e07bff2319ae74964b61b0b919"
+    },
+    {
+      "file": "paypal-solar/scripts/correction-demo.ts",
+      "bytes": 2912,
+      "sha256": "fa6759fcc8e5a70321c6ab81435bc3ce6321b5b1e85100d30bdee396507167a9"
+    },
+    {
+      "file": "paypal-solar/scripts/cost-scenarios.ts",
+      "bytes": 8629,
+      "sha256": "7590e61a3d640a54309b92c8ca5c1305491ef5d6c36594b7c6083dbc278a28b6"
+    },
+    {
+      "file": "paypal-solar/scripts/dev-workbench.mjs",
+      "bytes": 415,
+      "sha256": "704d1b99b7a6b6027e3e496ffe11711f49fdee6838664dccd9885ab00d28f99f"
+    },
+    {
+      "file": "paypal-solar/scripts/env.ts",
+      "bytes": 332,
+      "sha256": "13cdd2097e98c679e9a9e58e402aa5c2089c0470e2b0484455ae8b62517ac963"
+    },
+    {
+      "file": "paypal-solar/scripts/explain.ts",
+      "bytes": 1966,
+      "sha256": "72060b94b6ae8c16a4e0b45fc2712a3de92daafd38c22b3805547e5253bbd1c3"
+    },
+    {
+      "file": "paypal-solar/scripts/fetch-data.ts",
+      "bytes": 5392,
+      "sha256": "2035866cd38f7067f5a3d44c1176d8e30f632df93ef797ad9746a26c5b64ce86"
+    },
+    {
+      "file": "paypal-solar/scripts/investigate-statement.ts",
+      "bytes": 1679,
+      "sha256": "39d95fc558c9e7abde9474e1411ff2aa0e33fb2c6b313a7466404edf758a3b8d"
+    },
+    {
+      "file": "paypal-solar/scripts/list-invoices.ts",
+      "bytes": 710,
+      "sha256": "ea353d0a54b490be5f19ed88eb7c8782d2c1d666543c5ce749add86dabd746b0"
+    },
+    {
+      "file": "paypal-solar/scripts/monthly-settlement.ts",
+      "bytes": 3078,
+      "sha256": "f0dfa7b1889b93067e83038f57a8c6a1b909e291dc1c583949489bf4d9b04830"
+    },
+    {
+      "file": "paypal-solar/scripts/negotiate.ts",
+      "bytes": 2569,
+      "sha256": "5dbbbc148fd50f712e78794a77166b353e21a6ff22523fdaafeb0c0e92ff5a14"
+    },
+    {
+      "file": "paypal-solar/scripts/package-submission.mjs",
+      "bytes": 2662,
+      "sha256": "ef049b59ae79ab52adac87be8b30ae896e4cfa309482a38e56a3577953fb65ae"
+    },
+    {
+      "file": "paypal-solar/scripts/real-june.ts",
+      "bytes": 642,
+      "sha256": "99c912052076a227484a7edbf98a5dc3e9550210616fefb0637bda77561b4d42"
+    },
+    {
+      "file": "paypal-solar/scripts/settle.ts",
+      "bytes": 3000,
+      "sha256": "8e412dc246cd7c5b53a1f6c721700e0983bdcb41603023a718fa03bc683bd949"
+    },
+    {
+      "file": "paypal-solar/scripts/smoke.ts",
+      "bytes": 1043,
+      "sha256": "c1a4c2c4661e4c915af535fde9cc726459e87fae272d92b973fe1daa14bfe6f2"
+    },
+    {
+      "file": "paypal-solar/scripts/test-duplicate.ts",
+      "bytes": 1044,
+      "sha256": "28a4ab45eaac82856c4ce69c2e6e4d163cff71fd89c19da2b85b00e3509d7586"
+    },
+    {
+      "file": "paypal-solar/scripts/test-idempotency.ts",
+      "bytes": 4683,
+      "sha256": "ddf81dd4a3816ee8b9da79a0d1af724681e9f003135820e0dae2546d6df05086"
+    },
+    {
+      "file": "paypal-solar/docs/case-evidence.md",
+      "bytes": 6418,
+      "sha256": "b4d11c2f7a16f51d8bad56898271f88a8d9a9edd516ee6934718bed0413ff9ca"
+    },
+    {
+      "file": "paypal-solar/docs/coop-settlement.md",
+      "bytes": 4712,
+      "sha256": "67c70f10ec962c331d27e183dab79e3aa5641e7fdeb4ddc9a550ec3aacd50e32"
+    },
+    {
+      "file": "paypal-solar/docs/correction-demo.md",
+      "bytes": 6517,
+      "sha256": "627f246cad6f770e8b13bf54bd9b13aa7a823792b88f910e023ba2ecef4089fc"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/draft-extraction.json",
+      "bytes": 1017,
+      "sha256": "a05383b883d30724a1d1cb15a51914e5690c708cd22e9c07c56843a168bd3253"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/draft-protocol.json",
+      "bytes": 4489,
+      "sha256": "8231c27bae1f977efe99b5d4a7e5d14e870a46124152e883bfbbe9f41fd1be85"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/draft-result.json",
+      "bytes": 3621,
+      "sha256": "33cad7f87e03b05e398d189e31e0a8dc743d2010fa56940fee204933a85d94cb"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/earlier-ungrounded-output.json",
+      "bytes": 923,
+      "sha256": "1abaf5af80be421168403553c0743367426068f65e36858821f97bf8d5782c65"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/faster-model-extraction.json",
+      "bytes": 923,
+      "sha256": "9d04e5a721edea118a2be7d24cda468140bbea7831735f87afdb91dad6c3d986"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/faster-model-protocol.json",
+      "bytes": 4470,
+      "sha256": "8e2a3af53672760a09ed692dd9917f28eaefcc371e0e79e20e10249db6deec3a"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/faster-model-result.json",
+      "bytes": 3462,
+      "sha256": "0449d362744ab7d67804a159a6be916db3eefc773da523fee994cc3c1c93cfe3"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/final-extraction.json",
+      "bytes": 1004,
+      "sha256": "80141d6908f92429ff2213648a47b01f89e275c2917042a2ecbd7a2b2e9b1250"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/final-protocol.json",
+      "bytes": 4471,
+      "sha256": "4093eaafd32f14453c6857b43d80c56a945a3f5f1bd7ccc80a3cc02a03d26989"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/final-result.json",
+      "bytes": 13979,
+      "sha256": "f06a7fad3634061e682c0a12a7c1a7c11d4f995026cef6653e7c2109a99286f0"
+    },
+    {
+      "file": "paypal-solar/docs/evidence/correction/README.md",
+      "bytes": 2266,
+      "sha256": "eee2833bf2421faaf77f60e7e36d3a2fec6121b59980524920da03e682138a16"
+    },
+    {
+      "file": "paypal-solar/docs/JUDGE_GUIDE.md",
+      "bytes": 3771,
+      "sha256": "bd389b299eb31bbea341c5c6c8168053cd967b42a442ffc077a65fa3c7fa6200"
+    },
+    {
+      "file": "paypal-solar/docs/monthly-settlement.md",
+      "bytes": 4137,
+      "sha256": "225e0632897bc41ba39354a6bda17d98bd4907cac29f950f4a24fc84f0442d42"
+    },
+    {
+      "file": "paypal-solar/docs/operator-workbench.md",
+      "bytes": 6742,
+      "sha256": "67d2a5e258c83f7675cb8563e44a65b1ae57717e1a45c391e187305f9bce1ac7"
+    },
+    {
+      "file": "paypal-solar/docs/submission-evidence.json",
+      "bytes": 1133,
+      "sha256": "ef1dadd9430b595891ef37b9695ad50d06e87d62718bdc90cae973c258203e1f"
+    },
+    {
+      "file": "paypal-solar/docs/SUBMISSION.md",
+      "bytes": 5670,
+      "sha256": "6d322e27277a41448385a99319ec99f7c214c58660c29d9d1804be3b0e2986dd"
+    },
+    {
+      "file": "paypal-solar/docs/VERIFICATION.md",
+      "bytes": 3978,
+      "sha256": "148705f22e6dc47ddae1d798c6526a102d6c85efc3acf1246bbc44db1050e017"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/cases.ts",
+      "bytes": 4037,
+      "sha256": "04a4b902b0ad52402fc040ad1ea68d67b60570ee6fe26cdbec1fde1facbdad2a"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/fixtures/gemini-x-run-2026-10-14.json",
+      "bytes": 12490,
+      "sha256": "ee3aa78ff57577a15822ca0f9f6e52f8c2bb6d91f305eadc7e87d89c20b2c52b"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/fixtures/gemini-y-run-2026-10-14.json",
+      "bytes": 12040,
+      "sha256": "75cd40506b014c9503fcb12c45c99c6465c05fb8e6db198afc5a0ee7f0791bd5"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/fixtures/prompt-x-run.txt",
+      "bytes": 689,
+      "sha256": "c9d75927c9747df8e797b07bc2070dc632e2ffc8f341c649aa4ad589e03f6044"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/fixtures/prompt-y-run.txt",
+      "bytes": 1885,
+      "sha256": "7e5e12aa476d5465a4e65dc31b9bc250255f7355c416a1928a58530d3061ab62"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/jev.test.ts",
+      "bytes": 5002,
+      "sha256": "1dec453130f0ed91658dad812817fee7e89047ec1e98b067b4485c4e6f81953a"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/jev.ts",
+      "bytes": 11584,
+      "sha256": "21ddc14c38bd6fbaa0d80d2b3c42ac096408dd946be4123159123cee7c8e9b26"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/real-outputs.test.ts",
+      "bytes": 3192,
+      "sha256": "5995b87b30f8b7dfd8802d03f5d26c62885d83779f4a2a71dd6fbba9162c37d6"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/real-outputs.ts",
+      "bytes": 6056,
+      "sha256": "a215667c7243e6198d1ab341164ac00d2dcc3cdda99b5bde27717e3457b7e993"
+    },
+    {
+      "file": "paypal-solar/experiments/jev-grounding/run.ts",
+      "bytes": 4670,
+      "sha256": "20c34eab3bb20969ca341ccddefa26ae2a92c20f3b54a216dd30cd590a4b54a7"
+    },
+    {
+      "file": "paypal-solar/public/file.svg",
+      "bytes": 391,
+      "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4"
+    },
+    {
+      "file": "paypal-solar/public/globe.svg",
+      "bytes": 1035,
+      "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf"
+    },
+    {
+      "file": "paypal-solar/public/next.svg",
+      "bytes": 1375,
+      "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc"
+    },
+    {
+      "file": "paypal-solar/public/vercel.svg",
+      "bytes": 128,
+      "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4"
+    },
+    {
+      "file": "paypal-solar/public/window.svg",
+      "bytes": 385,
+      "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1"
+    },
+    {
+      "file": "paypal-solar/package.json",
+      "bytes": 1443,
+      "sha256": "04caa648682a00b7f542a86dc2f21da4c7aee263111d629e98faa179213c9a37"
+    },
+    {
+      "file": "paypal-solar/package-lock.json",
+      "bytes": 409838,
+      "sha256": "0ea02c7759e9276ce748168c339c0ca54578177f8657db1d6aa91e9cdda9afdb"
+    },
+    {
+      "file": "paypal-solar/README.md",
+      "bytes": 9628,
+      "sha256": "a6721ced5a10398583ebfd5d2c2048112cc1f34412ab270c0a493acb79eec77e"
+    },
+    {
+      "file": "paypal-solar/README-legacy.md",
+      "bytes": 14033,
+      "sha256": "c4f3cfb87430f318fa4a531292a0df8441a224e8ce91244423d71910aebdb3f0"
+    },
+    {
+      "file": "paypal-solar/DATA_SOURCES.md",
+      "bytes": 8080,
+      "sha256": "4d74da245e7075df9a8354c814d252c259c979518c17b7c21b9eaba84da196d9"
+    },
+    {
+      "file": "paypal-solar/.gitignore",
+      "bytes": 690,
+      "sha256": "5da44759a1ec8c314d794a20325fc16b492e3eada7b9dae40a95f6fec7c081d1"
+    },
+    {
+      "file": "paypal-solar/.env.example",
+      "bytes": 833,
+      "sha256": "d988a250452383692ae014d1974f71412c230fe862af111af7b7af7cdb166ef5"
+    },
+    {
+      "file": "paypal-solar/next.config.ts",
+      "bytes": 140,
+      "sha256": "a972c4f0ffa6dd714e7909b02d1ac19d2f2fe3d01f191efd2c5054bd6f142ec1"
+    },
+    {
+      "file": "paypal-solar/postcss.config.mjs",
+      "bytes": 91,
+      "sha256": "80367d7cce09e137c42c277673bf90357ae268c4604595979e4ce32ded71a148"
+    },
+    {
+      "file": "paypal-solar/tsconfig.json",
+      "bytes": 629,
+      "sha256": "172c71e5b3e27ff690fa63a1b74598be508bef99b18f001e6d48c2bdf4fb9eff"
+    },
+    {
+      "file": "paypal-solar/eslint.config.mjs",
+      "bytes": 549,
+      "sha256": "6fffe9c06412f85d8e334eadfb0c9bed1b506409fdd03e7ddc8a56ae2768bab9"
+    },
+    {
+      "file": "paypal-solar/vitest.config.mts",
+      "bytes": 211,
+      "sha256": "fd2a2f0097cea49b158bbf5cf5724ec54b202436dcdfa059c6fe10b6a2fc956a"
+    },
+    {
+      "file": "paypal-solar/vitest.in-process.config.mjs",
+      "bytes": 1247,
+      "sha256": "0ddc9dbb0a29cf83020e2d6ee8ade113d89d6daf7c7adab4d12ab18dcacf8481"
+    }
+  ]
+}

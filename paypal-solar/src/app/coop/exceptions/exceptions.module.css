@@ -1,0 +1,399 @@
+/* Exception desk styles, matching the operator workbench palette (workbench.module.css). */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  background: #e9eff2;
+  padding: 4px;
+  border-radius: 9px;
+  width: fit-content;
+  margin-bottom: 22px;
+}
+.tabs a {
+  padding: 7px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  color: #567080;
+}
+.tabs a:hover {
+  text-decoration: none !important;
+  color: #12354c;
+}
+.tabActive {
+  background: white;
+  color: #12354c !important;
+  font-weight: bold;
+  box-shadow: 0 1px 3px #192e4015;
+}
+.desk {
+  display: grid;
+  gap: 16px;
+}
+.banner {
+  background: #fff5e3;
+  border: 1px solid #efdcb9;
+  color: #7a5114;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 14px;
+  margin: 0;
+}
+.runInfo {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 24px;
+  font-size: 14px;
+  color: #405b6d;
+}
+.runInfo p {
+  margin: 0;
+}
+.runInfo p + p {
+  margin-top: 8px;
+}
+.runInfo strong {
+  color: var(--ink);
+}
+.scores {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.score {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+.score p {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  font-weight: bold;
+  margin: 0 0 6px;
+  color: #57707f;
+}
+.score strong {
+  display: block;
+  font-size: 36px;
+  letter-spacing: -1px;
+  line-height: 1.3;
+}
+.score strong small {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #658377;
+}
+.score span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.scoreAi {
+  background: #f1ecfd;
+  border-color: #dcd0f6;
+}
+.problems {
+  color: #9f3327;
+}
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.reviewer input,
+.disagree input {
+  border: 1px solid #c5d3db;
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink);
+  background: white;
+}
+.error {
+  background: #fff0ed;
+  color: #9f3327;
+  border: 1px solid #efc7bf;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 0;
+}
+.error button {
+  margin-left: 10px;
+  border: 1px solid #e3a99d;
+  background: white;
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #9f3327;
+}
+.cases {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+.case {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px 28px;
+  scroll-margin-top: 24px;
+}
+.case:target {
+  border-color: #bad6f8;
+  box-shadow: 0 0 0 3px #edf5ff;
+}
+.caseHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.caseId {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--muted);
+  margin-right: 10px;
+}
+.caseHead strong {
+  font-size: 19px;
+}
+.participant {
+  margin-left: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.amount {
+  font-size: 28px;
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+.facts,
+.messages {
+  border-radius: 9px;
+  padding: 14px 16px;
+}
+.facts {
+  background: #f4f7f9;
+}
+.messages {
+  background: #fff8eb;
+  border-left: 3px solid #d99d3b;
+}
+.label {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.facts .label {
+  color: #51736d;
+}
+.messages .label {
+  color: #886320;
+}
+.facts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #2c4656;
+}
+.messages ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+.messages li + li {
+  margin-top: 6px;
+}
+.noteId {
+  font-family: monospace;
+  font-size: 11px;
+  background: #fff0d5;
+  color: #936219;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+.empty {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.proposal {
+  margin-top: 16px;
+  border: 1px solid #e3e9ec;
+  border-radius: 12px;
+  padding: 16px 18px;
+  background: #f8fafc;
+}
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+.badgeAgent {
+  background: #f1ecfd;
+  color: #5b3fa8;
+}
+.badgeRule {
+  background: #edf1f3;
+  color: #445a68;
+}
+.badgeNone {
+  background: #fff0ed;
+  color: #9f3327;
+}
+.action {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 12px 0 4px;
+}
+.reason {
+  font-size: 14px;
+  color: #405b6d;
+  margin: 0;
+}
+.refused {
+  font-size: 12px;
+  color: #9f3327;
+  margin: 6px 0 0;
+}
+.evidence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 12px;
+}
+.evidenceLabel {
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 4px;
+}
+.tag {
+  font-size: 11px;
+}
+.tag summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 4px 9px;
+  border-radius: 6px;
+  border: 1px solid #cbd8e2;
+  background: white;
+  color: #235574;
+}
+.tag summary::-webkit-details-marker {
+  display: none;
+}
+.tagClaim summary {
+  border-color: #efdcb9;
+  background: #fff8eb;
+  color: #886320;
+}
+.tagBody {
+  max-width: 440px;
+  margin-top: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 10px 12px;
+}
+.tagBody p {
+  margin: 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.tagBody p + p {
+  margin-top: 6px;
+  color: var(--muted);
+}
+.unverified {
+  margin-top: 12px;
+}
+.unverified p {
+  font-size: 11px;
+  font-weight: bold;
+  color: #886320;
+  margin: 0 0 4px;
+}
+.unverified ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #405b6d;
+}
+.footnote {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 14px 0 0;
+}
+.reviewed {
+  font-size: 12px;
+  background: #f4f7f9;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 14px 0 0;
+}
+.reviewActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+.agree,
+.disagreeButton {
+  padding: 9px 15px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.agree {
+  background: #096a56;
+  border: 1px solid #096a56;
+  color: white;
+}
+.disagreeButton {
+  background: white;
+  border: 1px solid #e3a99d;
+  color: #9f3327;
+}
+.disagree {
+  display: contents;
+}
+.disagree input {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 740px) {
+  .scores,
+  .columns {
+    grid-template-columns: 1fr;
+  }
+  .case {
+    padding: 20px 18px;
+  }
+}

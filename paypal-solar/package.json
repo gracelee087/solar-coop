@@ -1,0 +1,46 @@
+{
+  "name": "paypal-solar",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "settlement:preview": "tsx scripts/monthly-settlement.ts preview",
+    "settlement:rehearsal": "tsx scripts/monthly-settlement.ts rehearsal",
+    "fetch-data": "tsx scripts/fetch-data.ts",
+    "fetch-data:h25": "tsx scripts/fetch-data.ts --h25-only",
+    "coop:sample": "tsx scripts/coop-sample.ts",
+    "coop": "tsx scripts/coop.ts",
+    "coop:investigate": "tsx scripts/investigate-statement.ts",
+    "dev:workbench": "node scripts/dev-workbench.mjs",
+    "test:in-process": "vitest run --config vitest.in-process.config.mjs --configLoader native --no-cache"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^4.0.94",
+    "@paypal/agent-toolkit": "^1.11.0",
+    "ai": "^7.0.138",
+    "next": "15.5.27",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "recharts": "3.10.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^18.0.7",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.27",
+    "exceljs": "^4.4.0",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
+  }
+}

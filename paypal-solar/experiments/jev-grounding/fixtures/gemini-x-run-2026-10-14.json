@@ -1,0 +1,450 @@
+{
+  "runId": "358c2289-e11c-4d7a-bb1a-11005fc14322",
+  "source": "agent",
+  "dataset": "synthetic_cases",
+  "savedAt": "2026-10-14T14:48:51.415Z",
+  "model": "gemini-3.5-flash-lite",
+  "proposals": [
+    {
+      "caseId": "X01",
+      "action": "remind",
+      "reason": "Invoice is 3 days overdue and no reminder has been sent yet.",
+      "evidence": [
+        "Invoice due: 2026-07-15 (3 days overdue)",
+        "Reminders sent: 0"
+      ],
+      "unverified": [
+        "Check if bank statement shows payment before reminding."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X02",
+      "action": "escalate",
+      "reason": "Invoice is 10 days overdue, 2 reminders already sent, and history of late payment.",
+      "evidence": [
+        "Invoice due: 2026-07-15 (10 days overdue)",
+        "Reminders sent: 2",
+        "N1"
+      ],
+      "unverified": [
+        "Check bank statement to confirm no direct transfer was made."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X03",
+      "action": "wait",
+      "reason": "Invoice is not overdue yet, waiting for due date.",
+      "evidence": [
+        "Invoice due: 2026-07-15 (not overdue)"
+      ],
+      "unverified": [
+        "Whether payment will be made on time"
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X04",
+      "action": "remind",
+      "reason": "Invoice is 4 days overdue and no reminder sent yet.",
+      "evidence": [
+        "Invoice due: 2026-07-15 (4 days overdue)",
+        "Reminders sent: 0"
+      ],
+      "unverified": [
+        "Check bank statement for bank transfer mentioned in N1."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X05",
+      "action": "wait",
+      "reason": "Participant noted they are away until 20 July.",
+      "evidence": [
+        "Invoice due: 2026-07-15 (2 days overdue)",
+        "Reminders sent: 0",
+        "N1"
+      ],
+      "unverified": [
+        "Participant's claim that they will pay after 20 July."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X06",
+      "action": "cancel_unclaimed_payout",
+      "reason": "Unclaimed payout awaiting pickup.",
+      "evidence": [
+        "PayPal status: UNCLAIMED",
+        "Payout sent: 2026-07-15 (5 days ago)"
+      ],
+      "unverified": [
+        "Whether producer will claim within 30 days"
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X07",
+      "action": "cancel_unclaimed_payout",
+      "reason": "Payout has been unclaimed for 27 days and recipient requested bank transfer instead.",
+      "evidence": [
+        "PayPal status: UNCLAIMED",
+        "Payout sent: 2026-07-15 (27 days ago)",
+        "N1"
+      ],
+      "unverified": [
+        "Recipient's bank account details for manual transfer."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X08",
+      "action": "contact_producer",
+      "reason": "Payout failed via PayPal and producer needs to be contacted.",
+      "evidence": [
+        "PayPal status: FAILED",
+        "Payout sent: 2026-07-15 (1 days ago)"
+      ],
+      "unverified": [
+        "Reason for PayPal payout failure."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X09",
+      "action": "contact_producer",
+      "reason": "Payout is on hold via PayPal and producer needs to be contacted.",
+      "evidence": [
+        "PayPal status: ONHOLD",
+        "Payout sent: 2026-07-15 (1 days ago)"
+      ],
+      "unverified": [
+        "Reason for PayPal payout hold."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X10",
+      "action": "check_provider",
+      "reason": "Execution was interrupted before the result was recorded; provider status needs checking.",
+      "evidence": [
+        "PayPal status: no result recorded",
+        "N1"
+      ],
+      "unverified": [
+        "Actual PayPal transaction status."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X11",
+      "action": "wait",
+      "reason": "Refund was issued on 21 July after meter correction and corrected bill was sent; waiting for payment of corrected bill.",
+      "evidence": [
+        "PayPal status: REFUNDED",
+        "Invoice due: 2026-07-15 (7 days overdue)",
+        "N1"
+      ],
+      "unverified": [
+        "Check bank statement / PayPal for payment of corrected bill."
+      ],
+      "source": "agent"
+    },
+    {
+      "caseId": "X12",
+      "action": "contact_producer",
+      "reason": "Funds were returned automatically after 30 days and producer provided a new email address.",
+      "evidence": [
+        "PayPal status: RETURNED",
+        "Payout sent: 2026-07-15 (33 days ago)",
+        "N1",
+        "N2"
+      ],
+      "unverified": [
+        "Whether the new PayPal email address is valid."
+      ],
+      "source": "agent"
+    }
+  ],
+  "views": [
+    {
+      "caseId": "X01",
+      "kind": "unpaid_bill",
+      "participantId": "H04",
+      "amountEur": "12.36",
+      "facts": [
+        "PayPal status: SENT",
+        "Today: 2026-07-18",
+        "Invoice due: 2026-07-15 (3 days overdue)",
+        "Reminders sent: 0",
+        "Payment confirmed by PayPal: no",
+        "Bank account check: not connected (a person must check the bank statement)"
+      ],
+      "notes": [],
+      "allowedActions": [
+        "wait",
+        "remind",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X02",
+      "kind": "unpaid_bill",
+      "participantId": "H05",
+      "amountEur": "15.71",
+      "facts": [
+        "PayPal status: UNPAID",
+        "Today: 2026-07-25",
+        "Invoice due: 2026-07-15 (10 days overdue)",
+        "Reminders sent: 2",
+        "Payment confirmed by PayPal: no",
+        "Bank account check: not connected (a person must check the bank statement)"
+      ],
+      "notes": [
+        {
+          "id": "N1",
+          "text": "May and April bills were also paid more than two weeks late."
+        }
+      ],
+      "allowedActions": [
+        "wait",
+        "remind",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X03",
+      "kind": "unpaid_bill",
+      "participantId": "H06",
+      "amountEur": "16.94",
+      "facts": [
+        "PayPal status: SENT",
+        "Today: 2026-07-10",
+        "Invoice due: 2026-07-15 (not overdue)",
+        "Reminders sent: 0",
+        "Payment confirmed by PayPal: no",
+        "Bank account check: not connected (a person must check the bank statement)"
+      ],
+      "notes": [],
+      "allowedActions": [
+        "wait",
+        "remind",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X04",
+      "kind": "unpaid_bill",
+      "participantId": "H07",
+      "amountEur": "12.36",
+      "facts": [
+        "PayPal status: SENT",
+        "Today: 2026-07-19",
+        "Invoice due: 2026-07-15 (4 days overdue)",
+        "Reminders sent: 0",
+        "Payment confirmed by PayPal: no",
+        "Bank account check: not connected (a person must check the bank statement)"
+      ],
+      "notes": [
+        {
+          "id": "N1",
+          "text": "Haus 7 wrote: I paid this by bank transfer on 14 July, reference ST-202606-H07."
+        }
+      ],
+      "allowedActions": [
+        "wait",
+        "remind",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X05",
+      "kind": "unpaid_bill",
+      "participantId": "H08",
+      "amountEur": "15.71",
+      "facts": [
+        "PayPal status: SENT",
+        "Today: 2026-07-17",
+        "Invoice due: 2026-07-15 (2 days overdue)",
+        "Reminders sent: 0",
+        "Payment confirmed by PayPal: no",
+        "Bank account check: not connected (a person must check the bank statement)"
+      ],
+      "notes": [
+        {
+          "id": "N1",
+          "text": "Haus 8 wrote: we are away until 20 July and will pay when we are back."
+        }
+      ],
+      "allowedActions": [
+        "wait",
+        "remind",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X06",
+      "kind": "unclaimed_payout",
+      "participantId": "H01",
+      "amountEur": "42.40",
+      "facts": [
+        "PayPal status: UNCLAIMED",
+        "Today: 2026-07-20",
+        "Payout sent: 2026-07-15 (5 days ago)",
+        "Producer contacts: 0",
+        "Unclaimed payouts return to the sender automatically after 30 days"
+      ],
+      "notes": [],
+      "allowedActions": [
+        "wait",
+        "contact_producer",
+        "cancel_unclaimed_payout",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X07",
+      "kind": "unclaimed_payout",
+      "participantId": "H02",
+      "amountEur": "29.57",
+      "facts": [
+        "PayPal status: UNCLAIMED",
+        "Today: 2026-08-11",
+        "Payout sent: 2026-07-15 (27 days ago)",
+        "Producer contacts: 2",
+        "Unclaimed payouts return to the sender automatically after 30 days"
+      ],
+      "notes": [
+        {
+          "id": "N1",
+          "text": "Haus 2 answered by phone: they will not open a PayPal account and asked to be paid by bank transfer."
+        }
+      ],
+      "allowedActions": [
+        "wait",
+        "contact_producer",
+        "cancel_unclaimed_payout",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X08",
+      "kind": "payout_problem",
+      "participantId": "H03",
+      "amountEur": "22.53",
+      "facts": [
+        "PayPal status: FAILED",
+        "Today: 2026-07-16",
+        "Payout sent: 2026-07-15 (1 days ago)",
+        "Producer contacts: 0"
+      ],
+      "notes": [],
+      "allowedActions": [
+        "wait",
+        "contact_producer",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X09",
+      "kind": "payout_problem",
+      "participantId": "H01",
+      "amountEur": "42.40",
+      "facts": [
+        "PayPal status: ONHOLD",
+        "Today: 2026-07-16",
+        "Payout sent: 2026-07-15 (1 days ago)",
+        "Producer contacts: 0"
+      ],
+      "notes": [],
+      "allowedActions": [
+        "wait",
+        "contact_producer",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X10",
+      "kind": "unknown_outcome",
+      "participantId": "H09",
+      "amountEur": "16.94",
+      "facts": [
+        "PayPal status: no result recorded",
+        "Today: 2026-07-15",
+        "Invoice due: 2026-07-15 (not overdue)",
+        "Reminders sent: 0",
+        "Payment confirmed by PayPal: no",
+        "Bank account check: not connected (a person must check the bank statement)"
+      ],
+      "notes": [
+        {
+          "id": "N1",
+          "text": "Execution was interrupted before the result was recorded."
+        }
+      ],
+      "allowedActions": [
+        "check_provider",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X11",
+      "kind": "refunded_after_payment",
+      "participantId": "H10",
+      "amountEur": "12.36",
+      "facts": [
+        "PayPal status: REFUNDED",
+        "Today: 2026-07-22",
+        "Invoice due: 2026-07-15 (7 days overdue)",
+        "Reminders sent: 0",
+        "Payment confirmed by PayPal: no",
+        "Bank account check: not connected (a person must check the bank statement)"
+      ],
+      "notes": [
+        {
+          "id": "N1",
+          "text": "Operator log: refunded Haus 10 in full on 21 July after a meter correction; corrected bill ST-202606-H10-R sent the same day."
+        }
+      ],
+      "allowedActions": [
+        "wait",
+        "escalate"
+      ]
+    },
+    {
+      "caseId": "X12",
+      "kind": "payout_problem",
+      "participantId": "H02",
+      "amountEur": "29.57",
+      "facts": [
+        "PayPal status: RETURNED",
+        "Today: 2026-08-17",
+        "Payout sent: 2026-07-15 (33 days ago)",
+        "Producer contacts: 0"
+      ],
+      "notes": [
+        {
+          "id": "N1",
+          "text": "Unclaimed for 30 days, funds returned automatically."
+        },
+        {
+          "id": "N2",
+          "text": "Haus 2 wrote: my PayPal e-mail changed, please use the new one."
+        }
+      ],
+      "allowedActions": [
+        "wait",
+        "contact_producer",
+        "escalate"
+      ]
+    }
+  ],
+  "problems": [],
+  "usage": {
+    "steps": 4,
+    "inputTokens": 9262,
+    "outputTokens": 1539
+  },
+  "reviews": {}
+}

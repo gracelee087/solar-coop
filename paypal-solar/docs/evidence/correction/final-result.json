@@ -1,0 +1,367 @@
+{
+  "run": "2026-10-13T22-05-56-480Z",
+  "inspected": {
+    "caseId": "944bce8e-243a-4758-b5fb-a8f902583ae9",
+    "environment": "simulated",
+    "state": "awaiting_approval",
+    "invoice": {
+      "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+      "seller": "Anna",
+      "buyer": "Ben",
+      "period": "2026-06",
+      "currency": "EUR",
+      "amountCents": 1500,
+      "captureId": "SIM-CAPTURE-BEN"
+    },
+    "documentSha256": "c575a71e38969780256149bed38762c23159d216cf54d96a9e56ea96c022fe4c",
+    "correction": {
+      "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+      "seller": "Anna",
+      "buyer": "Ben",
+      "period": "2026-06",
+      "currency": "EUR",
+      "correctedTotal": "13,00",
+      "final": true,
+      "quotes": {
+        "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+        "seller": "Anna",
+        "buyer": "Ben",
+        "period": "2026-06",
+        "currency": "EUR",
+        "correctedTotal": "13,00",
+        "final": "endgültig"
+      }
+    },
+    "extraction": {
+      "correction": {
+        "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+        "seller": "Anna",
+        "buyer": "Ben",
+        "period": "2026-06",
+        "currency": "EUR",
+        "correctedTotal": "13,00",
+        "final": true,
+        "quotes": {
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "period": "2026-06",
+          "currency": "EUR",
+          "correctedTotal": "13,00",
+          "final": "endgültig"
+        }
+      },
+      "raw": "{\n  \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n  \"seller\": \"Anna\",\n  \"buyer\": \"Ben\",\n  \"period\": \"2026-06\",\n  \"currency\": \"EUR\",\n  \"correctedTotal\": \"13,00\",\n  \"final\": true,\n  \"quotes\": {\n    \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n    \"seller\": \"Anna\",\n    \"buyer\": \"Ben\",\n    \"period\": \"2026-06\",\n    \"currency\": \"EUR\",\n    \"correctedTotal\": \"13,00\",\n    \"final\": \"endgültig\"\n  }\n}",
+      "model": "gemma4:e4b",
+      "mode": "local_model",
+      "elapsedMs": 109655
+    },
+    "correctedCents": 1300,
+    "paidCents": 1500,
+    "returnedCents": 0,
+    "differenceCents": 200,
+    "approvalToken": "d40ab91e2f4fda0e29fd0ed2f8ca4a054011acc1d849078871d334b9dcafd392",
+    "refundId": null,
+    "problems": [],
+    "events": [
+      {
+        "step": "Document linked to invoice",
+        "at": "2026-10-13T22:07:46.157Z",
+        "snapshot": {
+          "sha256": "c575a71e38969780256149bed38762c23159d216cf54d96a9e56ea96c022fe4c",
+          "extraction": {
+            "correction": {
+              "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+              "seller": "Anna",
+              "buyer": "Ben",
+              "period": "2026-06",
+              "currency": "EUR",
+              "correctedTotal": "13,00",
+              "final": true,
+              "quotes": {
+                "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+                "seller": "Anna",
+                "buyer": "Ben",
+                "period": "2026-06",
+                "currency": "EUR",
+                "correctedTotal": "13,00",
+                "final": "endgültig"
+              }
+            },
+            "raw": "{\n  \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n  \"seller\": \"Anna\",\n  \"buyer\": \"Ben\",\n  \"period\": \"2026-06\",\n  \"currency\": \"EUR\",\n  \"correctedTotal\": \"13,00\",\n  \"final\": true,\n  \"quotes\": {\n    \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n    \"seller\": \"Anna\",\n    \"buyer\": \"Ben\",\n    \"period\": \"2026-06\",\n    \"currency\": \"EUR\",\n    \"correctedTotal\": \"13,00\",\n    \"final\": \"endgültig\"\n  }\n}",
+            "model": "gemma4:e4b",
+            "mode": "local_model",
+            "elapsedMs": 109655
+          },
+          "correction": {
+            "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+            "seller": "Anna",
+            "buyer": "Ben",
+            "period": "2026-06",
+            "currency": "EUR",
+            "correctedTotal": "13,00",
+            "final": true,
+            "quotes": {
+              "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+              "seller": "Anna",
+              "buyer": "Ben",
+              "period": "2026-06",
+              "currency": "EUR",
+              "correctedTotal": "13,00",
+              "final": "endgültig"
+            }
+          }
+        },
+        "evidenceId": "d5e70be8911ba9912a463aac97f12bfc89d16947b6aec4687c007a44e84e47f7"
+      },
+      {
+        "step": "Payment independently retrieved",
+        "at": "2026-10-13T22:07:46.160Z",
+        "snapshot": {
+          "id": "SIM-CAPTURE-BEN",
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "currency": "EUR",
+          "paidCents": 1500,
+          "status": "COMPLETED"
+        },
+        "evidenceId": "24d50f95da94861aee19ba95ef99ff09a88783d6627a5f23b3de6132a7422912"
+      },
+      {
+        "step": "Refund ledger independently retrieved",
+        "at": "2026-10-13T22:07:46.161Z",
+        "snapshot": [],
+        "evidenceId": "c8e324ca9f98efa5886ed75ba647fab5f967a1991e0dc55d3375421554e34d3e"
+      }
+    ],
+    "explanation": "Seller approval needed for a €2.00 simulated refund. Verify the source correction is authentic."
+  },
+  "final": {
+    "caseId": "944bce8e-243a-4758-b5fb-a8f902583ae9",
+    "environment": "simulated",
+    "state": "resolved",
+    "invoice": {
+      "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+      "seller": "Anna",
+      "buyer": "Ben",
+      "period": "2026-06",
+      "currency": "EUR",
+      "amountCents": 1500,
+      "captureId": "SIM-CAPTURE-BEN"
+    },
+    "documentSha256": "c575a71e38969780256149bed38762c23159d216cf54d96a9e56ea96c022fe4c",
+    "correction": {
+      "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+      "seller": "Anna",
+      "buyer": "Ben",
+      "period": "2026-06",
+      "currency": "EUR",
+      "correctedTotal": "13,00",
+      "final": true,
+      "quotes": {
+        "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+        "seller": "Anna",
+        "buyer": "Ben",
+        "period": "2026-06",
+        "currency": "EUR",
+        "correctedTotal": "13,00",
+        "final": "endgültig"
+      }
+    },
+    "extraction": {
+      "correction": {
+        "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+        "seller": "Anna",
+        "buyer": "Ben",
+        "period": "2026-06",
+        "currency": "EUR",
+        "correctedTotal": "13,00",
+        "final": true,
+        "quotes": {
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "period": "2026-06",
+          "currency": "EUR",
+          "correctedTotal": "13,00",
+          "final": "endgültig"
+        }
+      },
+      "raw": "{\n  \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n  \"seller\": \"Anna\",\n  \"buyer\": \"Ben\",\n  \"period\": \"2026-06\",\n  \"currency\": \"EUR\",\n  \"correctedTotal\": \"13,00\",\n  \"final\": true,\n  \"quotes\": {\n    \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n    \"seller\": \"Anna\",\n    \"buyer\": \"Ben\",\n    \"period\": \"2026-06\",\n    \"currency\": \"EUR\",\n    \"correctedTotal\": \"13,00\",\n    \"final\": \"endgültig\"\n  }\n}",
+      "model": "gemma4:e4b",
+      "mode": "local_model",
+      "elapsedMs": 109655
+    },
+    "correctedCents": 1300,
+    "paidCents": 1500,
+    "returnedCents": 200,
+    "differenceCents": 0,
+    "approvalToken": null,
+    "refundId": "SIM-REFUND-1",
+    "problems": [],
+    "events": [
+      {
+        "step": "Document linked to invoice",
+        "at": "2026-10-13T22:07:46.157Z",
+        "snapshot": {
+          "sha256": "c575a71e38969780256149bed38762c23159d216cf54d96a9e56ea96c022fe4c",
+          "extraction": {
+            "correction": {
+              "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+              "seller": "Anna",
+              "buyer": "Ben",
+              "period": "2026-06",
+              "currency": "EUR",
+              "correctedTotal": "13,00",
+              "final": true,
+              "quotes": {
+                "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+                "seller": "Anna",
+                "buyer": "Ben",
+                "period": "2026-06",
+                "currency": "EUR",
+                "correctedTotal": "13,00",
+                "final": "endgültig"
+              }
+            },
+            "raw": "{\n  \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n  \"seller\": \"Anna\",\n  \"buyer\": \"Ben\",\n  \"period\": \"2026-06\",\n  \"currency\": \"EUR\",\n  \"correctedTotal\": \"13,00\",\n  \"final\": true,\n  \"quotes\": {\n    \"invoiceNumber\": \"SOL-2026-06-ANNA-BEN\",\n    \"seller\": \"Anna\",\n    \"buyer\": \"Ben\",\n    \"period\": \"2026-06\",\n    \"currency\": \"EUR\",\n    \"correctedTotal\": \"13,00\",\n    \"final\": \"endgültig\"\n  }\n}",
+            "model": "gemma4:e4b",
+            "mode": "local_model",
+            "elapsedMs": 109655
+          },
+          "correction": {
+            "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+            "seller": "Anna",
+            "buyer": "Ben",
+            "period": "2026-06",
+            "currency": "EUR",
+            "correctedTotal": "13,00",
+            "final": true,
+            "quotes": {
+              "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+              "seller": "Anna",
+              "buyer": "Ben",
+              "period": "2026-06",
+              "currency": "EUR",
+              "correctedTotal": "13,00",
+              "final": "endgültig"
+            }
+          }
+        },
+        "evidenceId": "d5e70be8911ba9912a463aac97f12bfc89d16947b6aec4687c007a44e84e47f7"
+      },
+      {
+        "step": "Payment independently retrieved",
+        "at": "2026-10-13T22:07:46.160Z",
+        "snapshot": {
+          "id": "SIM-CAPTURE-BEN",
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "currency": "EUR",
+          "paidCents": 1500,
+          "status": "COMPLETED"
+        },
+        "evidenceId": "24d50f95da94861aee19ba95ef99ff09a88783d6627a5f23b3de6132a7422912"
+      },
+      {
+        "step": "Refund ledger independently retrieved",
+        "at": "2026-10-13T22:07:46.161Z",
+        "snapshot": [],
+        "evidenceId": "c8e324ca9f98efa5886ed75ba647fab5f967a1991e0dc55d3375421554e34d3e"
+      },
+      {
+        "step": "Payment independently retrieved",
+        "at": "2026-10-13T22:07:46.163Z",
+        "snapshot": {
+          "id": "SIM-CAPTURE-BEN",
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "currency": "EUR",
+          "paidCents": 1500,
+          "status": "COMPLETED"
+        },
+        "evidenceId": "6a3764b14c460f70955d8e42556068896b69bd3d626b353e3d5d98caf2063127"
+      },
+      {
+        "step": "Refund ledger independently retrieved",
+        "at": "2026-10-13T22:07:46.163Z",
+        "snapshot": [],
+        "evidenceId": "536c35beb7cfa0d34b28cb4443d6ddfa0594384d82b85cb911f57c028e9b671a"
+      },
+      {
+        "step": "Seller approved simulated refund",
+        "at": "2026-10-13T22:07:46.163Z",
+        "snapshot": {
+          "requestId": "40b2845946fa12dafec72746e3ce7eea8340",
+          "amountCents": 200,
+          "documentSha256": "c575a71e38969780256149bed38762c23159d216cf54d96a9e56ea96c022fe4c"
+        },
+        "evidenceId": "7d6d6f4d38787791206d94666694754d4ceab9ae7fa8d82ac1f16168fd405021"
+      },
+      {
+        "step": "Refund requested, not yet confirmed",
+        "at": "2026-10-13T22:07:46.164Z",
+        "snapshot": {
+          "id": "SIM-REFUND-1",
+          "captureId": "SIM-CAPTURE-BEN",
+          "currency": "EUR",
+          "amountCents": 200,
+          "requestId": "40b2845946fa12dafec72746e3ce7eea8340",
+          "status": "COMPLETED"
+        },
+        "evidenceId": "8a3a9d4febb233278c9424a93fd296ad6c4c24818802a5146b6ebd522eeba24f"
+      },
+      {
+        "step": "Payment independently retrieved",
+        "at": "2026-10-13T22:07:46.164Z",
+        "snapshot": {
+          "id": "SIM-CAPTURE-BEN",
+          "invoiceNumber": "SOL-2026-06-ANNA-BEN",
+          "seller": "Anna",
+          "buyer": "Ben",
+          "currency": "EUR",
+          "paidCents": 1500,
+          "status": "COMPLETED"
+        },
+        "evidenceId": "5f647b5be8717f694d269321d6da2508af599ee9d84f42e1c5abfd64134f5423"
+      },
+      {
+        "step": "Refund ledger independently retrieved",
+        "at": "2026-10-13T22:07:46.164Z",
+        "snapshot": [
+          {
+            "id": "SIM-REFUND-1",
+            "captureId": "SIM-CAPTURE-BEN",
+            "currency": "EUR",
+            "amountCents": 200,
+            "requestId": "40b2845946fa12dafec72746e3ce7eea8340",
+            "status": "COMPLETED"
+          }
+        ],
+        "evidenceId": "128d4fa217260e30dc63227a5eabfd6b315976e183b880036365d96a4b461cf7"
+      },
+      {
+        "step": "Refund independently retrieved",
+        "at": "2026-10-13T22:07:46.164Z",
+        "snapshot": {
+          "id": "SIM-REFUND-1",
+          "captureId": "SIM-CAPTURE-BEN",
+          "currency": "EUR",
+          "amountCents": 200,
+          "requestId": "40b2845946fa12dafec72746e3ce7eea8340",
+          "status": "COMPLETED"
+        },
+        "evidenceId": "9fcab494ca0051fb2bc5b1a605b4061540af5d47dbdb80571449ff03581fbf4f"
+      }
+    ],
+    "explanation": "Paid €15.00 − confirmed refunds €2.00 = corrected bill €13.00. Difference €0.00. Simulated settlement reconciled."
+  },
+  "paymentRequests": 1,
+  "humanApprovals": 0,
+  "approvalSource": "scripted test approval; no human participant",
+  "humanElapsedMs": null,
+  "success": true
+}

@@ -1,0 +1,35 @@
+{
+  "note": "Invoices already issued in the PayPal sandbox, keyed by settlement (period + producer + neighbour, see settlementKey). They were issued before invoice numbers were fixed per settlement, so they carry older numbers and are not found by number lookup. A settlement listed here is never invoiced again. Values are as issued (price window 8.70-19.00 ct/kWh per kWh, before fixed costs were included).",
+  "settlements": {
+    "ES-202606-P1-H1": {
+      "invoiceId": "INV2-P9TV-97QE-3XVT-SWYB",
+      "invoiceNumber": "ES-202606-H1-MV5RLKBS",
+      "neighbour": "Haus 10",
+      "sharedKWh": 96.17,
+      "priceCt": 12.3,
+      "amountEur": "11.83",
+      "issued": "2026-10-12",
+      "statusAtRecord": "PAID"
+    },
+    "ES-202606-P1-H2": {
+      "invoiceId": "INV2-RX77-2QPA-EQNM-4YUQ",
+      "invoiceNumber": "ES-202606-H2-MV5R6U26",
+      "neighbour": "Haus 14",
+      "sharedKWh": 131.31,
+      "priceCt": 13,
+      "amountEur": "17.07",
+      "issued": "2026-10-12",
+      "statusAtRecord": "PAID"
+    },
+    "ES-202606-P1-H3": {
+      "invoiceId": "INV2-WPZN-DDX8-GHU5-25XU",
+      "invoiceNumber": "ES-202606-H3-MV5R77S9",
+      "neighbour": "Haus 16",
+      "sharedKWh": 115.6,
+      "priceCt": 13.35,
+      "amountEur": "15.43",
+      "issued": "2026-10-12",
+      "statusAtRecord": "PAID"
+    }
+  }
+}

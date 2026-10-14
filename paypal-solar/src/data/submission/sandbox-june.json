@@ -1,0 +1,491 @@
+{
+  "period": "2026-06",
+  "savedAt": "2026-10-14T10:29:17.326Z",
+  "source": "agent",
+  "model": "gemini-3.5-flash-lite",
+  "drafts": [
+    {
+      "id": "bill-ST-202606-H04",
+      "kind": "bill",
+      "participantId": "H04",
+      "period": "2026-06",
+      "statementId": "ST-202606-H04",
+      "amountCents": 1236,
+      "currency": "EUR",
+      "memo": "Energy sharing bill 2026-06, ref ST-202606-H04",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.288Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:03:48.337Z"
+      },
+      "executedAt": "2026-10-14T10:03:55.265Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-01",
+        "status": "SENT"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:12.220Z",
+        "observed": {
+          "externalStatus": "PAID",
+          "amount": "12.36",
+          "reference": "ST-202606-H04"
+        },
+        "reason": "paid 12.36 € = settlement 12.36 €"
+      }
+    },
+    {
+      "id": "bill-ST-202606-H05",
+      "kind": "bill",
+      "participantId": "H05",
+      "period": "2026-06",
+      "statementId": "ST-202606-H05",
+      "amountCents": 1571,
+      "currency": "EUR",
+      "memo": "Energy sharing bill 2026-06, ref ST-202606-H05",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.289Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:20:45.846Z"
+      },
+      "executedAt": "2026-10-14T10:21:15.686Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-02",
+        "status": "SENT"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:12.887Z",
+        "observed": {
+          "externalStatus": "PAID",
+          "amount": "15.71",
+          "reference": "ST-202606-H05"
+        },
+        "reason": "paid 15.71 € = settlement 15.71 €"
+      }
+    },
+    {
+      "id": "bill-ST-202606-H06",
+      "kind": "bill",
+      "participantId": "H06",
+      "period": "2026-06",
+      "statementId": "ST-202606-H06",
+      "amountCents": 1694,
+      "currency": "EUR",
+      "memo": "Energy sharing bill 2026-06, ref ST-202606-H06",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.289Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:20:48.489Z"
+      },
+      "executedAt": "2026-10-14T10:21:22.762Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-03",
+        "status": "SENT"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:13.257Z",
+        "observed": {
+          "externalStatus": "PAID",
+          "amount": "16.94",
+          "reference": "ST-202606-H06"
+        },
+        "reason": "paid 16.94 € = settlement 16.94 €"
+      }
+    },
+    {
+      "id": "bill-ST-202606-H07",
+      "kind": "bill",
+      "participantId": "H07",
+      "period": "2026-06",
+      "statementId": "ST-202606-H07",
+      "amountCents": 1236,
+      "currency": "EUR",
+      "memo": "Energy sharing bill 2026-06, ref ST-202606-H07",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.289Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:20:51.051Z"
+      },
+      "executedAt": "2026-10-14T10:21:28.767Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-04",
+        "status": "SENT"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:14.145Z",
+        "observed": {
+          "externalStatus": "PAID",
+          "amount": "12.36",
+          "reference": "ST-202606-H07"
+        },
+        "reason": "paid 12.36 € = settlement 12.36 €"
+      }
+    },
+    {
+      "id": "bill-ST-202606-H08",
+      "kind": "bill",
+      "participantId": "H08",
+      "period": "2026-06",
+      "statementId": "ST-202606-H08",
+      "amountCents": 1571,
+      "currency": "EUR",
+      "memo": "Energy sharing bill 2026-06, ref ST-202606-H08",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.289Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:20:53.945Z"
+      },
+      "executedAt": "2026-10-14T10:21:35.066Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-05",
+        "status": "SENT"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:14.579Z",
+        "observed": {
+          "externalStatus": "PAID",
+          "amount": "15.71",
+          "reference": "ST-202606-H08"
+        },
+        "reason": "paid 15.71 € = settlement 15.71 €"
+      }
+    },
+    {
+      "id": "bill-ST-202606-H09",
+      "kind": "bill",
+      "participantId": "H09",
+      "period": "2026-06",
+      "statementId": "ST-202606-H09",
+      "amountCents": 1694,
+      "currency": "EUR",
+      "memo": "Energy sharing bill 2026-06, ref ST-202606-H09",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.289Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:20:56.390Z"
+      },
+      "executedAt": "2026-10-14T10:21:43.019Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-06",
+        "status": "SENT"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:15.291Z",
+        "observed": {
+          "externalStatus": "PAID",
+          "amount": "16.94",
+          "reference": "ST-202606-H09"
+        },
+        "reason": "paid 16.94 € = settlement 16.94 €"
+      }
+    },
+    {
+      "id": "bill-ST-202606-H10",
+      "kind": "bill",
+      "participantId": "H10",
+      "period": "2026-06",
+      "statementId": "ST-202606-H10",
+      "amountCents": 1236,
+      "currency": "EUR",
+      "memo": "Energy sharing bill 2026-06, ref ST-202606-H10",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.289Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:20:58.898Z"
+      },
+      "executedAt": "2026-10-14T10:21:49.516Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-07",
+        "status": "SENT"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:16.107Z",
+        "observed": {
+          "externalStatus": "PAID",
+          "amount": "12.36",
+          "reference": "ST-202606-H10"
+        },
+        "reason": "paid 12.36 € = settlement 12.36 €"
+      }
+    },
+    {
+      "id": "payout-PO-202606-H01",
+      "kind": "payout",
+      "participantId": "H01",
+      "period": "2026-06",
+      "statementId": "PO-202606-H01",
+      "amountCents": 4240,
+      "currency": "EUR",
+      "memo": "Energy sharing payout 2026-06, ref PO-202606-H01",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.290Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:21:01.467Z"
+      },
+      "executedAt": "2026-10-14T10:21:54.717Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-08",
+        "status": "PENDING"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:16.664Z",
+        "observed": {
+          "externalStatus": "SUCCESS",
+          "amount": "42.40",
+          "reference": "PO-202606-H01"
+        },
+        "reason": "paid out 42.40 € = settlement 42.40 €"
+      }
+    },
+    {
+      "id": "payout-PO-202606-H02",
+      "kind": "payout",
+      "participantId": "H02",
+      "period": "2026-06",
+      "statementId": "PO-202606-H02",
+      "amountCents": 2957,
+      "currency": "EUR",
+      "memo": "Energy sharing payout 2026-06, ref PO-202606-H02",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.290Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:21:03.910Z"
+      },
+      "executedAt": "2026-10-14T10:21:59.303Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-09",
+        "status": "PENDING"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:16.984Z",
+        "observed": {
+          "externalStatus": "SUCCESS",
+          "amount": "29.57",
+          "reference": "PO-202606-H02"
+        },
+        "reason": "paid out 29.57 € = settlement 29.57 €"
+      }
+    },
+    {
+      "id": "payout-PO-202606-H03",
+      "kind": "payout",
+      "participantId": "H03",
+      "period": "2026-06",
+      "statementId": "PO-202606-H03",
+      "amountCents": 2253,
+      "currency": "EUR",
+      "memo": "Energy sharing payout 2026-06, ref PO-202606-H03",
+      "status": "executed",
+      "createdAt": "2026-10-14T09:43:36.290Z",
+      "approval": {
+        "by": "Demo operator",
+        "at": "2026-10-14T10:03:50.683Z"
+      },
+      "executedAt": "2026-10-14T10:04:18.796Z",
+      "result": {
+        "externalId": "REDACTED-SANDBOX-10",
+        "status": "PENDING"
+      },
+      "reconciliation": {
+        "status": "matched",
+        "checkedAt": "2026-10-14T10:29:17.325Z",
+        "observed": {
+          "externalStatus": "SUCCESS",
+          "amount": "22.53",
+          "reference": "PO-202606-H03"
+        },
+        "reason": "paid out 22.53 € = settlement 22.53 €"
+      }
+    }
+  ],
+  "queue": [
+    {
+      "facts": {
+        "draftId": "bill-ST-202606-H04",
+        "kind": "bill",
+        "participantId": "H04",
+        "name": "Haus 4",
+        "period": "2026-06",
+        "kWh": "95.1",
+        "totalKWh": "192.6",
+        "sharePct": "49",
+        "priceCt": "13.00",
+        "amountEur": "12.36",
+        "flags": []
+      },
+      "summary": "Consumer bill of 12.36 € for 95.1 kWh received at 13.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "bill-ST-202606-H05",
+        "kind": "bill",
+        "participantId": "H05",
+        "name": "Haus 5",
+        "period": "2026-06",
+        "kWh": "120.8",
+        "totalKWh": "249.7",
+        "sharePct": "48",
+        "priceCt": "13.00",
+        "amountEur": "15.71",
+        "flags": []
+      },
+      "summary": "Consumer bill of 15.71 € for 120.8 kWh received at 13.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "bill-ST-202606-H06",
+        "kind": "bill",
+        "participantId": "H06",
+        "name": "Haus 6",
+        "period": "2026-06",
+        "kWh": "130.3",
+        "totalKWh": "271.1",
+        "sharePct": "48",
+        "priceCt": "13.00",
+        "amountEur": "16.94",
+        "flags": []
+      },
+      "summary": "Consumer bill of 16.94 € for 130.3 kWh received at 13.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "bill-ST-202606-H07",
+        "kind": "bill",
+        "participantId": "H07",
+        "name": "Haus 7",
+        "period": "2026-06",
+        "kWh": "95.1",
+        "totalKWh": "192.6",
+        "sharePct": "49",
+        "priceCt": "13.00",
+        "amountEur": "12.36",
+        "flags": []
+      },
+      "summary": "Consumer bill of 12.36 € for 95.1 kWh received at 13.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "bill-ST-202606-H08",
+        "kind": "bill",
+        "participantId": "H08",
+        "name": "Haus 8",
+        "period": "2026-06",
+        "kWh": "120.8",
+        "totalKWh": "249.7",
+        "sharePct": "48",
+        "priceCt": "13.00",
+        "amountEur": "15.71",
+        "flags": []
+      },
+      "summary": "Consumer bill of 15.71 € for 120.8 kWh received at 13.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "bill-ST-202606-H09",
+        "kind": "bill",
+        "participantId": "H09",
+        "name": "Haus 9",
+        "period": "2026-06",
+        "kWh": "130.3",
+        "totalKWh": "271.1",
+        "sharePct": "48",
+        "priceCt": "13.00",
+        "amountEur": "16.94",
+        "flags": []
+      },
+      "summary": "Consumer bill of 16.94 € for 130.3 kWh received at 13.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "bill-ST-202606-H10",
+        "kind": "bill",
+        "participantId": "H10",
+        "name": "Haus 10",
+        "period": "2026-06",
+        "kWh": "95.1",
+        "totalKWh": "192.6",
+        "sharePct": "49",
+        "priceCt": "13.00",
+        "amountEur": "12.36",
+        "flags": []
+      },
+      "summary": "Consumer bill of 12.36 € for 95.1 kWh received at 13.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "payout-PO-202606-H01",
+        "kind": "payout",
+        "participantId": "H01",
+        "name": "Haus 1",
+        "period": "2026-06",
+        "kWh": "353.4",
+        "totalKWh": "1268.6",
+        "sharePct": "28",
+        "priceCt": "12.00",
+        "amountEur": "42.40",
+        "flags": []
+      },
+      "summary": "Producer payout of 42.40 € for 353.4 kWh sold at 12.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "payout-PO-202606-H02",
+        "kind": "payout",
+        "participantId": "H02",
+        "name": "Haus 2",
+        "period": "2026-06",
+        "kWh": "246.4",
+        "totalKWh": "903.5",
+        "sharePct": "27",
+        "priceCt": "12.00",
+        "amountEur": "29.57",
+        "flags": []
+      },
+      "summary": "Producer payout of 29.57 € for 246.4 kWh sold at 12.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    },
+    {
+      "facts": {
+        "draftId": "payout-PO-202606-H03",
+        "kind": "payout",
+        "participantId": "H03",
+        "name": "Haus 3",
+        "period": "2026-06",
+        "kWh": "187.7",
+        "totalKWh": "689.0",
+        "sharePct": "27",
+        "priceCt": "12.00",
+        "amountEur": "22.53",
+        "flags": []
+      },
+      "summary": "Producer payout of 22.53 € for 187.7 kWh sold at 12.00 ct/kWh. No flags to review.",
+      "summarySource": "agent"
+    }
+  ],
+  "problems": []
+}

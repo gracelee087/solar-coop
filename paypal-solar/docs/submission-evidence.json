@@ -1,0 +1,22 @@
+{
+  "description": "Archived execution evidence, not a new provider or model call. Hashes identify files, not independent certification.",
+  "sandbox": {
+    "source": "runs/coop/2026-06.json",
+    "sourceSha256": "913209c82d3b1cab0f6c77b5d6beca8c2303b03cf559266eb514dfdf2de0edd0",
+    "file": "src/data/submission/sandbox-june.json",
+    "sha256": "85ddad8fa89ff0c7785cdd557dc66240e7edb46321272dd7c0b300347ef2ac0d",
+    "redactions": [
+      "approval.by replaced with Demo operator",
+      "result.externalId replaced with numbered REDACTED-SANDBOX aliases"
+    ],
+    "preserved": "All amounts, dates, statuses, model name, summaries and reconciliation observations."
+  },
+  "holdout": {
+    "file": "experiments/jev-grounding/fixtures/gemini-y-run-2026-10-14.json",
+    "sha256": "75cd40506b014c9503fcb12c45c99c6465c05fb8e6db198afc5a0ee7f0791bd5",
+    "redactions": [],
+    "prompt": "experiments/jev-grounding/fixtures/prompt-y-run.txt",
+    "cases": "src/lib/coop/exception-holdout.ts",
+    "limitation": "One run; cases, answers and prompt authored by the same team. Not an independent benchmark."
+  }
+}
