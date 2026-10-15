@@ -1,0 +1,62 @@
+{
+  "statementId": "ST-202606-H07",
+  "kind": "bill",
+  "topic": "meter",
+  "evidence": [
+    {
+      "id": "F1",
+      "kind": "fact",
+      "text": "Statement ST-202606-H07; Haus 7; 12.36 EUR; 2026-06."
+    },
+    {
+      "id": "F2",
+      "kind": "fact",
+      "text": "Settlement: 95.1 kWh at 13.00 ct/kWh (display rounded; amount computed from integer Wh)."
+    },
+    {
+      "id": "F3",
+      "kind": "fact",
+      "text": "Ledger state: pending_approval. No approval recorded."
+    },
+    {
+      "id": "F4",
+      "kind": "fact",
+      "text": "No reconciliation recorded. No provider result recorded."
+    },
+    {
+      "id": "F5",
+      "kind": "fact",
+      "text": "Bank account check: not connected. Customer messages do not confirm a payment."
+    },
+    {
+      "id": "C1",
+      "kind": "fact",
+      "text": "meter check (match): src/data/coop-meter-2026-06.csv: 2880 quarter-hours in 2026-06; 192.6 kWh consumed in total. Same file version as at billing."
+    },
+    {
+      "id": "C2",
+      "kind": "fact",
+      "text": "allocation check (match): Each quarter-hour: 14 % of the group's pooled feed-in, at most what the household used. Shared: 95.1 kWh. Residual from the household's own supplier: 97.5 kWh (82.1 kWh when no solar was shared, 15.4 kWh above the household's share). 95.1 + 97.5 = 192.6 kWh."
+    },
+    {
+      "id": "C3",
+      "kind": "fact",
+      "text": "bill check (match): Billed 95.1 kWh × 13.00 ct = 12.36 €, equal to the recomputation (whole Wh and cents)."
+    },
+    {
+      "id": "C4",
+      "kind": "fact",
+      "text": "payment check (pending): Invoice not sent yet (ledger: pending approval). Not paid."
+    },
+    {
+      "id": "N1",
+      "kind": "claim",
+      "text": "My meter shows about 193 kWh for 2026-06, but your bill says 95.1 kWh. Which one is right? Reference ST-202606-H07."
+    },
+    {
+      "id": "E1",
+      "kind": "manual",
+      "text": "Entered by Demo operator (not verified by the system): Metering operator: Fictional reply: the metering operator confirms 192.6 kWh for 2026-06, matching the meter file."
+    }
+  ]
+}

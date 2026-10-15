@@ -1,0 +1,123 @@
+{
+  "experiment": "h07-dispute",
+  "ranAt": "2026-10-15T12:02:53.623Z",
+  "model": "gemini-3.5-flash-lite",
+  "inputSha256": "fbb521e36130b980a5aedaf25e59fe2402e65823f5f5c7b4150a8dc4fc9cbc18",
+  "promptSha256": "b6814bfe007f912f987c270d92fa289a476c5bb1de625c2c7d556f0e6920bce0",
+  "modelRequests": 2,
+  "accepted": true,
+  "proposal": {
+    "reason": "The customer (Haus 7) disputes the meter reading in N1, noting their total meter consumption is about 193 kWh while the bill is for 95.1 kWh. According to C3 (bill check) and C2 (allocation check), total consumption above the shared energy is normal and is supplied by the household's own supplier (total 192.6 kWh, 95.1 kWh shared, 97.5 kWh from own supplier). Unresolved claim: meter reading and consumption amount comparison (N1).",
+    "evidence": [
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "N1",
+      "E1"
+    ],
+    "unverified": [
+      "Customer message N1 (meter dispute)."
+    ],
+    "checks": [
+      "Check the metering data for Haus 7 for June 2026: total household consumption is 192.6 kWh, of which 95.1 kWh is shared energy from the community and 97.5 kWh is supplied by the household's own supplier (C2, C3).",
+      "Verify that the bill correctly states 95.1 kWh of shared energy resulting in 12.36 EUR (F1, F2, C3).",
+      "Confirm that the customer message N1 questions the difference between total consumption (193 kWh) and billed community energy (95.1 kWh)."
+    ],
+    "replyDraft": "Dear customer,\n\nThank you for your enquiry regarding statement ST-202606-H07. \n\nRegarding your question about the meter reading: your total household consumption for June 2026 is indeed 192.6 kWh (as mentioned in N1, approximately 193 kWh). Of this total, 95.1 kWh was supplied as shared energy from our energy community and billed at 13.00 ct/kWh, amounting to 12.36 EUR (C3). \n\nTotal consumption above the shared energy is normal and is supplied by your household's own conventional supplier (97.5 kWh) (C2). Both figures are correct: your total meter reading reflects your overall household consumption, while our invoice covers solely your share of the community energy.\n\nPlease let us know if you have any further questions.\n\nBest regards,\nEnergy Community Team"
+  },
+  "codeCheckProblems": [],
+  "rawModelSteps": [
+    {
+      "content": [
+        {
+          "type": "tool-call",
+          "toolCallId": "call_364470",
+          "toolName": "get_statement",
+          "input": "{}",
+          "providerMetadata": {
+            "google": {
+              "thoughtSignature": "EmAKXgFpFH0TupmPOQfL88gYzjneBHwl03X5P/uVcbbbSpVXuQewK8lZhgN0wdZ1y7OEthMMUscy54RMhpcikZJcNLcSwHVCfyNOlM6UIi8K4bPdxnzv3zxSb4POdouR+P8="
+            }
+          }
+        }
+      ],
+      "finishReason": {
+        "unified": "tool-calls",
+        "raw": "STOP"
+      },
+      "usage": {
+        "inputTokens": {
+          "total": 498,
+          "noCache": 498,
+          "cacheRead": 0
+        },
+        "outputTokens": {
+          "total": 10,
+          "text": 10,
+          "reasoning": 0
+        },
+        "raw": {
+          "promptTokenCount": 498,
+          "candidatesTokenCount": 10,
+          "totalTokenCount": 508,
+          "serviceTier": "standard",
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 498
+            }
+          ]
+        }
+      }
+    },
+    {
+      "content": [
+        {
+          "type": "tool-call",
+          "toolCallId": "call_383972",
+          "toolName": "propose_investigation",
+          "input": "{\"evidence\":[\"F1\",\"F2\",\"F3\",\"F4\",\"F5\",\"C1\",\"C2\",\"C3\",\"C4\",\"N1\",\"E1\"],\"unverified\":[\"Customer message N1 (meter dispute).\"],\"reason\":\"The customer (Haus 7) disputes the meter reading in N1, noting their total meter consumption is about 193 kWh while the bill is for 95.1 kWh. According to C3 (bill check) and C2 (allocation check), total consumption above the shared energy is normal and is supplied by the household's own supplier (total 192.6 kWh, 95.1 kWh shared, 97.5 kWh from own supplier). Unresolved claim: meter reading and consumption amount comparison (N1).\",\"checks\":[\"Check the metering data for Haus 7 for June 2026: total household consumption is 192.6 kWh, of which 95.1 kWh is shared energy from the community and 97.5 kWh is supplied by the household's own supplier (C2, C3).\",\"Verify that the bill correctly states 95.1 kWh of shared energy resulting in 12.36 EUR (F1, F2, C3).\",\"Confirm that the customer message N1 questions the difference between total consumption (193 kWh) and billed community energy (95.1 kWh).\"],\"replyDraft\":\"Dear customer,\\n\\nThank you for your enquiry regarding statement ST-202606-H07. \\n\\nRegarding your question about the meter reading: your total household consumption for June 2026 is indeed 192.6 kWh (as mentioned in N1, approximately 193 kWh). Of this total, 95.1 kWh was supplied as shared energy from our energy community and billed at 13.00 ct/kWh, amounting to 12.36 EUR (C3). \\n\\nTotal consumption above the shared energy is normal and is supplied by your household's own conventional supplier (97.5 kWh) (C2). Both figures are correct: your total meter reading reflects your overall household consumption, while our invoice covers solely your share of the community energy.\\n\\nPlease let us know if you have any further questions.\\n\\nBest regards,\\nEnergy Community Team\"}",
+          "providerMetadata": {
+            "google": {
+              "thoughtSignature": "EmAKXgFpFH0TDcqgDCpDxkCM09fNS1xMqzF/Vl5ZsVx/nLBJDiwHDWnK81SlDK60fm5eCsfDLt5fjJe9PVE+8ACvmoX3PUYtRHiU8DBQkTZObyr9ktMQJ8vVVN2NiWgf0Qg="
+            }
+          }
+        }
+      ],
+      "finishReason": {
+        "unified": "tool-calls",
+        "raw": "STOP"
+      },
+      "usage": {
+        "inputTokens": {
+          "total": 1170,
+          "noCache": 1170,
+          "cacheRead": 0
+        },
+        "outputTokens": {
+          "total": 540,
+          "text": 540,
+          "reasoning": 0
+        },
+        "raw": {
+          "promptTokenCount": 1170,
+          "candidatesTokenCount": 540,
+          "totalTokenCount": 1710,
+          "serviceTier": "standard",
+          "promptTokensDetails": [
+            {
+              "modality": "TEXT",
+              "tokenCount": 1170
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

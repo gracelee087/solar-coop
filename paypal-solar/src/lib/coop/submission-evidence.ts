@@ -2,11 +2,13 @@ import sandbox from "../../data/submission/sandbox-june.json";
 import holdout from "../../../experiments/jev-grounding/fixtures/gemini-y-run-2026-10-14.json";
 import type { CoopState } from "./state";
 import type { ExceptionRun } from "./exception-desk";
+import { loadMeterMonth } from "./billing-check";
+import { sampleCoop } from "./sample-group";
 import { makeView } from "./workbench";
 
 /** Bundled immutable observations. Never copied into the executable runs/ ledger. */
 export function submissionWorkbench() {
-  return makeView(structuredClone(sandbox) as CoopState, "agent", {});
+  return makeView(structuredClone(sandbox) as CoopState, "agent", {}, loadMeterMonth(process.cwd(), sampleCoop, sandbox.period));
 }
 
 export function submissionHoldout(): ExceptionRun {

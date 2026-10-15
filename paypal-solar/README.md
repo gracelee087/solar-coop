@@ -6,6 +6,8 @@ The main submission is the **10-household operator workflow**: three producers a
 
 ## Start here — no API keys required
 
+**Hosted demo, no installation:** https://solar-coop.onrender.com/coop/demo: your own offline copy of the Haus 7 dispute, end to end. There is no PayPal call and no live AI call. Archived evidence is at `/coop?source=evidence`. This is the Render free tier, so the first request after inactivity can take about a minute. Operator writes are disabled there. To run everything locally:
+
 Use Node.js 22 and npm. From the repository root:
 
 ```bash
@@ -18,7 +20,7 @@ Open **http://127.0.0.1:3007/coop?source=evidence**. The default `/` also opens 
 
 1. **Archived sandbox evidence:** `/coop?source=evidence` — seven bills, three payouts, €102.38 billed, €94.50 paid out, ten saved matched observations. Read-only; identifiers and operator name anonymized. These are archived observations, not current PayPal status.
 2. **Saved AI evaluation:** `/coop/exceptions?source=holdout` — twelve synthetic cases and the saved real-model outputs, including Y11. One run scored 12/12 against 8/12 for the fixed baseline. Cases, answers and prompt came from the same team; this is not an independent benchmark or a claim of perfect reasoning.
-3. **Interactive offline rehearsal:** `/coop?source=rehearsal` — click “Start offline June rehearsal”, select Haus 7, enter a reviewer name and a fictional payment claim, then prepare and review the checklist. It is a fixed template, explicitly not AI. Approval does not execute a payment; review does not mark a bill paid or send a reply.
+3. **Interactive offline rehearsal:** `/coop?source=rehearsal` — click “Start offline June rehearsal”, select Haus 7, enter a reviewer name and attach the fictional meter question. Follow the bill check (meter → shared energy → bill → payment), prepare and review the checklist, add a manual evidence entry, record the explanation and the customer's confirmation. The checklist is a fixed template, explicitly not AI. Approval does not execute a payment; closing a dispute does not mark a bill paid or send a reply.
 
 Follow [the judge walkthrough](docs/JUDGE_GUIDE.md). [Evidence manifest](docs/submission-evidence.json) records source hashes and redactions. Archived evidence is bundled independently from the ignored `runs/` directory and is never seeded into an executable payment ledger.
 
@@ -28,8 +30,10 @@ Follow [the judge walkthrough](docs/JUDGE_GUIDE.md). [Evidence manifest](docs/su
 - AI tool orchestration for settlement drafts and exception proposals, with evidence references and explicit unverified claims.
 - Human approval, separate sandbox execution, idempotency and reconciliation.
 - €500 per-payment and €5,000 account-wide daily limits, including concurrent executions.
-- Customer investigation records separate from payment status; stale proposals and unknown evidence are rejected.
-- An optional model-based investigation command exists, but has only mock-model verification. The interactive H07 workflow uses a template. Do not infer live AI performance from it.
+- Bill check per statement: meter values + allocation rule → shared energy → billed kWh, price and amount → that statement's PayPal record. Consumption above the shared energy is explained as residual supply. Recorded values are never replaced by the recomputation; a bill is compared only with the meter file version and contract terms saved with its run, otherwise it is shown as not comparable.
+- Payment state separates not sent, sent but not checked, sent and unpaid, and paid (reconciled PAID observation, with the checked field).
+- Customer disputes (amount, metered energy, already paid) with their own status, separate from payment status: waiting for an external answer and correction needed stay open; closing records whether the customer confirmed or only the operator reviewed. Hand-entered evidence is labelled manual and never counts as a system check. Stale proposals and unknown evidence are rejected.
+- AI agent investigation of a customer dispute: one pre-registered real run on the Haus 7 case (`experiments/h07-dispute`: input, prompt, criteria, raw model steps, judgement). The demo shows that saved proposal only when the case equals its recorded input; otherwise it shows a template, labelled not AI. One run on one fictional case, not an accuracy measure.
 
 Consumers pay the operator; the operator pays producers. The AI does not hold funds. This prototype does not operate the grid, connect meters or bank accounts, settle supplier charges or calculate tax.
 
@@ -91,9 +95,16 @@ Alternative-provider capabilities and public fees were researched on 14 October 
 
 ## Costs and limitations
 
-For the modelled June CSV, a 1 ct/kWh operator fee leaves **€0.19 after assumed PayPal fees only**. A 2 ct scenario leaves €8.22 and reduces the producer price to 11 ct/kWh. Neither figure is profit. Labour, hosting, model, tax and other costs are excluded; human time savings have not been measured. Assumptions and fee sources are in [the historical cost table](README-legacy.md#operator-money-after-paypal-fees) and `scripts/cost-scenarios.ts`.
+For the modelled June CSV, a 1 ct/kWh operator fee leaves **€0.19 after assumed PayPal fees only**. A 2 ct scenario leaves €8.22 and reduces the producer price to 11 ct/kWh. Neither figure is profit. Labour, hosting, model, tax and other costs are excluded; human time savings have not been measured. The 1 ct/kWh figure is a demo assumption from a secondary source, not a pricing or revenue model. Assumptions and fee sources are in [the historical cost table](README-legacy.md#operator-money-after-paypal-fees) and `scripts/cost-scenarios.ts`.
 
-The twelve-case evaluation is small and not independent. Evidence validation does not prove semantic correctness. Sandbox observations demonstrate prototype integration, not production eligibility or regulatory approval. The app has no scheduler or production operator authentication.
+The twelve-case evaluation is small and not independent. Evidence validation does not prove semantic correctness. Sandbox observations demonstrate prototype integration, not production eligibility or regulatory approval. The app has no scheduler or production operator authentication, and its ledger is local JSON files with file locks, not a persistent database; on the hosted demo the filesystem is not kept across restarts.
+
+## Data and credits
+
+- Map tiles and boundary data: © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors. The grid-area polygon in `src/data/grid-area-frankfurt.json` is derived from OSM and is available under the ODbL 1.0.
+- The NRM grid area is an approximation from the [Mainova price sheet (01.05.2024)](https://mainova.de/resource/blob/137504/ae75493a6122c1c4ceedb1a9b5b481fc/preisblatt-bsv-01-05-2024-data.pdf) ("Frankfurt am Main ohne die Stadtteile Höchst, Nied, Sindlingen, Sossenheim, Unterliederbach und Zeilsheim"), not an official balancing-area boundary. Syna GmbH area and the agreed Nied/Sossenheim transfer: [Mainova/Süwag press release, 14.02.2025](https://mainova.de/resource/blob/147230/c2bb9581986a66d2383323a980339cd7/20250214-pm-mainova-suewag-kooperation-data.pdf).
+- Map library: [Leaflet](https://leafletjs.com) 1.9.4, BSD-2-Clause. Household positions on the map are fictional.
+- More detail: [Data sources](DATA_SOURCES.md#grid-area-map-operator-desk).
 
 ## Project map
 

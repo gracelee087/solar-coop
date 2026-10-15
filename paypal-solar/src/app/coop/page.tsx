@@ -1,7 +1,9 @@
 import path from "node:path";
+import { redirect } from "next/navigation";
 import { loadWorkbench } from "@/lib/coop/workbench";
 import Workbench from "./workbench";
 import { submissionWorkbench } from "@/lib/coop/submission-evidence";
+import { sampleCoop } from "@/lib/coop/sample-group";
 export const dynamic = "force-dynamic";
 export default async function CoopPage({
   searchParams,
@@ -20,6 +22,10 @@ export default async function CoopPage({
     params.source === "evidence"
       ? null
       : loadWorkbench(path.join(process.cwd(), "runs"), period, source);
+  // Only a rehearsal can be started here; a missing agent or replay run
+  // falls back to the archived evidence.
+  if (source && source !== "rehearsal" && !saved)
+    redirect("/coop?source=evidence");
   const snapshot =
     period === "2026-06" &&
     (params.source === "evidence" || (!saved && !source));
@@ -29,6 +35,11 @@ export default async function CoopPage({
     (process.env.NODE_ENV !== "production" ||
       process.env.ALLOW_COOP_DESK_DECISIONS === "true");
   return (
-    <Workbench initial={initial} writable={writable} snapshot={snapshot} />
+    <Workbench
+      initial={initial}
+      writable={writable}
+      snapshot={snapshot}
+      group={sampleCoop.participants.map(({ id, name, role }) => ({ id, name, role }))}
+    />
   );
 }

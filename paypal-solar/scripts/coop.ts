@@ -16,6 +16,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { runCoopAgent } from "../src/lib/coop/agent";
 import { PaymentLedger } from "../src/lib/coop/ledger";
+import { billingInputs, meterFileFor } from "../src/lib/coop/billing-check";
 import { parseMeterCsv } from "../src/lib/coop/meter-csv";
 import { findInvoiceByNumber, getInvoice } from "../src/lib/paypal-api";
 import { getPayoutBatch, paypalRail, type PaymentRail } from "../src/lib/coop/rail";
@@ -39,8 +40,7 @@ const noExecution: PaymentRail = {
   },
 };
 
-const loadMonth = (period: string) =>
-  parseMeterCsv(sampleCoop, period, readFileSync(path.join(ROOT, "src", "data", `coop-meter-${period}.csv`), "utf8"));
+const readMeter = (period: string) => readFileSync(path.join(ROOT, meterFileFor(period)), "utf8");
 
 async function main() {
   const args = process.argv.slice(2);
@@ -64,16 +64,19 @@ async function main() {
 
   if (cmd === "rehearse" || cmd === "run") {
     const ledger = PaymentLedger.restore(sampleCoop.participants, noExecution, state?.drafts ?? []);
+    // Read the meter file once: the run is computed from, and its saved hash describes, exactly this text.
+    const meterText = readMeter(period);
+    const month = parseMeterCsv(sampleCoop, period, meterText);
     let model;
     let name: string | null = null;
-    if (cmd === "rehearse") model = scriptedCoopModel(sampleCoop, period, loadMonth(period));
+    if (cmd === "rehearse") model = scriptedCoopModel(sampleCoop, period, month);
     else {
       if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) throw new Error("Gemini key missing in .env.local");
       // One named model, no fallback restart after tool calls that changed the ledger.
       name = process.env.COOP_AGENT_MODEL ?? process.env.GEMINI_MODELS?.split(",")[0] ?? "gemini-3.5-flash-lite";
       model = google(name);
     }
-    const result = await runCoopAgent({ group: sampleCoop, ledger, period, loadMonth, model });
+    const result = await runCoopAgent({ group: sampleCoop, ledger, period, loadMonth: () => month, model });
     const next: CoopState = {
       period,
       savedAt: new Date().toISOString(),
@@ -82,6 +85,7 @@ async function main() {
       drafts: ledger.list(),
       queue: result.queue,
       problems: result.problems,
+      inputs: billingInputs(sampleCoop, meterFileFor(period), meterText),
     };
     // The run takes a while; if anyone saved this period meanwhile, keep their changes and save nothing.
     updateState(dir, period, (cur) => {

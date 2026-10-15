@@ -97,3 +97,24 @@ least 1 cent better off** after rounding to cents:
 
 If no such price exists (for example, when too little was shared to cover the smart-meter share), there is no deal
 that month. The agents negotiate only inside this window.
+
+## Grid-area map (operator desk)
+
+- **Map tiles:** OpenStreetMap standard tiles (`tile.openstreetmap.org`), © OpenStreetMap contributors
+  (https://www.openstreetmap.org/copyright). Loaded only for the visible view under the OSMF tile usage policy
+  (https://operations.osmfoundation.org/policies/tiles/); no prefetch or offline copy. No service level is guaranteed.
+- **Grid-area polygon:** `src/data/grid-area-frankfurt.json`, derived from OpenStreetMap boundary relations, ODbL 1.0
+  (details and method in `src/data/grid-area-frankfurt.README.md`). It is an **approximation** of the NRM Netzdienste
+  Rhein-Main electricity grid area based on the Mainova price sheet (BSV, 01.05.2024): "Frankfurt am Main ohne die
+  Stadtteile Höchst, Nied, Sindlingen, Sossenheim, Unterliederbach und Zeilsheim"
+  (https://mainova.de/resource/blob/137504/ae75493a6122c1c4ceedb1a9b5b481fc/preisblatt-bsv-01-05-2024-data.pdf).
+  Not an official balancing-area (Bilanzierungsgebiet) boundary; no open dataset of operator areas was found.
+- **Syna GmbH area:** the six western districts. Nied and Sossenheim: transfer to NRM agreed, date not confirmed
+  (Mainova/Süwag press release, 14.02.2025,
+  https://mainova.de/resource/blob/147230/c2bb9581986a66d2383323a980339cd7/20250214-pm-mainova-suewag-kooperation-data.pdf).
+- **Legal condition shown under the map:** § 42c Abs. 4 EnWG (https://www.gesetze-im-internet.de/enwg_2005/__42c.html):
+  sharing within one distribution operator's balancing area from 1 June 2026; from 1 June 2028 also a directly adjacent
+  operator's area in the same control zone.
+- **Households:** the ten households are fictional; their positions are points on street centre lines in
+  Frankfurt-Bornheim (`src/app/coop/map-layout.ts`), not addresses or buildings.
+- **Library:** Leaflet 1.9.4 (BSD-2-Clause).

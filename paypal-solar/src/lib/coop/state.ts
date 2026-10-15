@@ -1,6 +1,7 @@
 import { closeSync, existsSync, mkdirSync, openSync, readdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import type { QueueEntry } from "./approval";
+import type { BillingInputs } from "./billing-check";
 import { executedCentsOn, type PaymentDraft } from "./ledger";
 
 /** Saved state of one period: the ledger's drafts and the approval queue built by the agent run. */
@@ -12,6 +13,8 @@ export interface CoopState {
   drafts: PaymentDraft[];
   queue: QueueEntry[];
   problems: string[];
+  /** Meter file version and contract terms the bills were computed from (absent in runs saved before this was recorded). */
+  inputs?: BillingInputs;
 }
 
 export const statePath = (dir: string, period: string) => {

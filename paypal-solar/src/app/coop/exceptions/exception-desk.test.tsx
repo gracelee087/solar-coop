@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { EXCEPTION_CASES } from "../../../lib/coop/exception-cases";
 import { ruleBaselineRun, type ExceptionRun } from "../../../lib/coop/exception-desk";
 import { caseView } from "../../../lib/coop/exceptions";
+import { submissionHoldout } from "../../../lib/coop/submission-evidence";
 import ExceptionDesk from "./exception-desk";
 
 const at = new Date("2026-10-14T12:00:00Z");
@@ -61,5 +62,30 @@ describe("exception desk page", () => {
     expect(out).toContain("the fixed rules in 8/12");
     expect(out).not.toContain("Agree");
     expect(out).not.toContain("Your name");
+  });
+
+  it("shows the saved per-case misses, the saved AI agent output and a code checklist for the selected case", () => {
+    const out = html(submissionHoldout());
+    expect(out).toContain("Per case · matched the frozen answer");
+    expect(out).toContain("Differ: AI agent none · fixed rules Y01, Y04, Y07, Y11.");
+    expect(out).toContain("AI guide · Saved AI agent output");
+    expect(out).toContain("Checklist · computed by code, not AI");
+    expect(out).toContain("Y11");
+    expect(out).not.toContain("Agree");
+  });
+
+  it("says when a run has no per-case comparison", () => {
+    expect(html(ruleBaselineRun(EXCEPTION_CASES, at))).toContain("No per-case comparison with frozen answers in this saved run");
+  });
+
+  it("keeps secondary detail in collapsed sections without dropping any caveat", () => {
+    const out = html(submissionHoldout());
+    const summaries = out.split("<summary>").slice(1).map((seg) => seg.split("</summary>")[0]);
+    for (const label of ["One saved run · not an independent benchmark", "Checklist · computed by code, not AI", "Which cases differ", "Colour key", "Based on (2)", "Still to confirm by a person (1)"]) {
+      expect(summaries.some((s) => s.includes(label))).toBe(true);
+    }
+    expect(out).not.toMatch(/<details[^>]* open/);
+    expect(out).toContain("Not an independent accuracy measure.");
+    expect(out).toContain("It does not check whether the reasoning is correct.");
   });
 });

@@ -4,6 +4,8 @@ This walkthrough requires no credentials, provider account or external API call 
 
 ## 1. Run the application
 
+Hosted: https://solar-coop.onrender.com/coop/demo runs the Haus 7 dispute (step 4) for each visitor separately, and https://solar-coop.onrender.com/coop?source=evidence shows steps 2 and 3. The first request after inactivity can take about a minute (Render free tier). The full rehearsal needs a local run:
+
 From the repository root: `cd paypal-solar`, `npm ci`, then `npm run dev:workbench`. Open http://127.0.0.1:3007/coop?source=evidence. Use Node.js 22.
 
 On a fresh checkout, `/` redirects to the desk and displays bundled read-only evidence. Existing local runs do not affect the explicit `source=evidence` route.
@@ -20,15 +22,21 @@ Open `/coop/exceptions?source=holdout`. Locate **Y11** and compare the code-writ
 
 Expected: 12/12 accepted actions for the saved model run and 8/12 for fixed rules. This is one synthetic evaluation authored by the same team as the prompt; it is not an unseen independent benchmark. Read-only review is intentional. Some explanations are incomplete and evidence references have known limitations.
 
-## 4. Try the operator interaction separately
+## 4. Follow one customer dispute end to end
 
-Open `/coop?source=rehearsal`. On a fresh installation, click **Start offline June rehearsal**. Existing rehearsals are preserved. Select **Haus 7**, enter a reviewer name, and attach this fictional message:
+Fastest path, no installation: https://solar-coop.onrender.com/coop/demo (or `/coop/demo` locally). Click **Start the demo** and follow the hint on the page. Adding the fictional metering-operator reply before **Prepare** loads the saved real AI proposal, recorded once on exactly that input (`experiments/h07-dispute`, with criteria and judgement). The steps below use the local rehearsal instead.
 
-> I paid by bank transfer yesterday. Please check before sending another reminder.
+Open `/coop?source=rehearsal`. On a fresh installation, click **Start offline June rehearsal**. Existing rehearsals are preserved. Select **Haus 7** and enter a reviewer name.
 
-Prepare the offline investigation, inspect the facts/claim tags and unsent reply, then record a review note such as “Check the bank record and allocation before resolving.”
+1. Click **Use a fictional meter question** (topic: metered energy) and **Attach unverified message**.
+2. Read **Bill check · meter → share → bill → payment**. Expected: 192.6 kWh metered = 95.1 kWh shared solar (billed, 13.00 ct, €12.36) + 97.5 kWh residual from the household's own supplier; meter, allocation and bill links show MATCH; payment shows OPEN (not sent).
+3. **Prepare offline investigation**. Inspect the evidence tags (C1–C3 bill check, N1 message) and the unsent reply draft, which uses the computed numbers. Record a review note.
+4. Under **Evidence received**, click **Use a fictional metering-operator reply** and **Add manual evidence**. Expected: the entry is labelled manual, not verified by the system, and the investigation is out of date. Prepare and review again.
+5. **Record explanation sent**, then **Record customer confirmation** (or **Close without customer confirmation**).
 
-Expected: review becomes awaiting evidence. Payment remains unconfirmed. No reply, reminder, model request or payment is sent. The checklist is explicitly a template, not an AI result. Resolving an unreconciled payment is not offered: the button stays disabled, and the API refuses it with 409.
+Expected: the dispute is closed and the **Case timeline** lists every step with calendar days (not working time). The payment still reads "Not sent · not paid": closing a dispute never marks a bill paid. No reply, model request or payment is sent. Each proposal is labelled either as a code template (not AI) or as the saved real AI proposal, which is used only when the case equals the recorded input.
+
+To see the payment-claim path, select another bill, choose **Says already paid**, and follow the same steps. Expected: an explanation is not offered for a payment claim, and closing is refused with 409 until the payment is reconciled. **Wait for external answer** and **Correction needed** keep any case open.
 
 You can approve a pending rehearsal draft with a reviewer name; expected status is approved but not sent. Execution is a separate CLI operation, deliberately outside this key-free guide. This rehearsal is independent from the archived sandbox evidence.
 

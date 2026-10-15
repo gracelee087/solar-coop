@@ -16,12 +16,20 @@ June CSV with the existing scripted model. It does not need keys and makes no ex
 existing rehearsal decisions. The custom Next development server binds only to 127.0.0.1; PORT overrides 3007.
 The standard `npm run dev` still works in an ordinary local environment.
 
-1. Select a consumer statement, enter an operator name and attach a fictional customer message.
-2. Prepare an offline investigation. The fixed checklist and reply template are explicitly labelled **not AI**.
-3. Expand an evidence tag to see the linked fact or unverified message.
-4. Record what will be checked next. This changes only the case to **awaiting evidence**.
-5. A case can be resolved only after the statement is executed and reconciled, its latest investigation has been
-   reviewed, and the operator provides a resolution note. A new message or changed payment evidence requires a new review.
+1. Select a consumer statement, enter an operator name, choose what the customer disputes (bill amount, metered
+   energy, already paid) and attach a fictional customer message.
+2. Read the bill check: meter file → allocation (shared energy and residual supply) → billed kWh, price and amount →
+   the statement's PayPal record. Each link is MATCH, MISMATCH, NOT COMPARABLE or OPEN.
+3. Prepare an offline investigation. The fixed checklist and reply template are explicitly labelled **not AI**.
+   Expand an evidence tag to see the linked fact, manual entry or unverified message.
+4. Record what will be checked next (**investigating**). Add evidence received from a metering operator, grid
+   operator or customer as a manual entry; it invalidates the investigation until it is prepared and reviewed again.
+5. Record the outcome:
+   - amount or meter dispute: **explanation sent** only when the bill check matches, then **customer confirmed** or
+     **closed after operator review** (no customer confirmation);
+   - payment claim: **closed** only after the statement is executed and reconciled;
+   - **waiting for an external answer** and **correction needed** keep the case open.
+   The dispute status and the payment status are separate: a closed dispute does not mean the bill is paid.
 
 Approving a payment uses the existing approval API; execution and PayPal reconciliation remain separate CLI operations.
 Reviewing a case does not pause reminders, send messages, change payment status, or verify bank transfers.
@@ -37,7 +45,8 @@ npm run coop:investigate -- 2026-06 bill-ST-202606-H07 --rehearsal
 Default is a dry run: reports the selected model, evidence IDs and input character count, with zero calls.
 Only an explicit `--live` plus `GOOGLE_GENERATIVE_AI_API_KEY` calls Gemini. `COOP_AGENT_MODEL` selects the model.
 The model has exactly two tools: read the linked statement and propose an investigation. It must read first, cite
-the saved provider and bank limitations and every message, and supply unresolved claims, checks and an unsent reply.
+the bill check (C3) for an amount or meter dispute, or the saved provider and bank limitations (F4, F5) for a payment
+claim, cite every message, and supply unresolved claims, checks and an unsent reply.
 No model tool can approve, execute, refund, send, resolve a case, or mark paid. On failure the case stays open.
 Existing evidence IDs and required fields are checked; semantic correctness is **not** guaranteed.
 The proposal is saved only if the statement and its messages did not change during the run and the case is still open.
@@ -51,6 +60,8 @@ An offline template may replace an AI proposal only through an explicit prepare 
 - Operations use the existing monthly state lock. Reads, version checks and atomic sidecar writes happen under it.
 - Browser requests carry a SHA-256 version over the current draft, settlement view and case. Stale writes fail.
 - New evidence invalidates the investigation. A review alone cannot satisfy month-end readiness.
+- Each run saves the SHA-256 of its meter file and its contract terms (`inputs`). The bill check compares only
+  against the same versions; runs saved before this (including the archived evidence) show as not comparable.
 - Readiness requires every displayed payment to be executed and matched, no unresolved cases, no run problems,
   and no extra ledger entries or orphaned cases requiring review. This is payment-record readiness, not a complete
   tax/accounting close or a guarantee of bank reconciliation.
