@@ -24,7 +24,7 @@ Expected: 12/12 accepted actions for the saved model run and 8/12 for fixed rule
 
 ## 4. Follow one customer dispute end to end
 
-Fastest path, no installation: https://solar-coop.onrender.com/coop/demo (or `/coop/demo` locally). Click **Start the demo** and follow the hint on the page. Adding the fictional metering-operator reply before **Prepare** loads the saved real AI proposal, recorded once on exactly that input (`experiments/h07-dispute`, with criteria and judgement). The steps below use the local rehearsal instead.
+Fastest path, no installation: https://solar-coop.onrender.com/coop/demo (or `/coop/demo` locally). Click **Start the demo** and follow the screens: one step per screen, each saying what it shows, with **Start over** at any time. Adding the fictional metering-operator reply before **Ask the AI agent** loads the saved real AI proposal, recorded once on exactly that input (`experiments/h07-dispute`, with criteria and judgement). The steps below use the local rehearsal instead.
 
 Open `/coop?source=rehearsal`. On a fresh installation, click **Start offline June rehearsal**. Existing rehearsals are preserved. Select **Haus 7** and enter a reviewer name.
 

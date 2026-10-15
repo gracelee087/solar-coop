@@ -61,7 +61,7 @@ npm run build
 npm start
 ```
 
-`fetch-data:h25` downloads only the BDEW profile; it does not replace committed PVGIS observations or saved agreements. The operator desk and its evidence tests do not need that download. Production `npm start` listens on port 3000; archived evidence remains visible and unauthenticated writes remain disabled. Do not enable `ALLOW_COOP_DESK_DECISIONS` on a public deployment without separate authentication.
+`fetch-data:h25` downloads only the BDEW profile; it does not replace committed PVGIS observations or saved agreements. The app and the demo run without that download, but the full `npm test` suite reads it: run `npm run fetch-data:h25` before `npm test`. Production `npm start` listens on port 3000; archived evidence remains visible and unauthenticated writes remain disabled. Do not enable `ALLOW_COOP_DESK_DECISIONS` on a public deployment without separate authentication.
 
 See [verification status](docs/VERIFICATION.md) for the distinction between the standard test command and the restricted-environment fallback. `npm run test:in-process` is an alternative runner, not evidence that `npm test` or a production build succeeded.
 

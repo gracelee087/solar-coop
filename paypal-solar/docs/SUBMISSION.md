@@ -107,13 +107,14 @@ Three things are not yet validated:
 
 No credentials or installation needed: **https://solar-coop.onrender.com/coop/demo**. This is the Render free tier, so the first request after inactivity can take about a minute. Each visitor gets their own offline copy. There is no PayPal call and no live AI call. Data are fictional and cleared after 24 hours or on a restart.
 
-1. Click **Start the demo**. Haus 7's message about its bill is already attached.
-2. Read the **Bill check**: meter → share → bill → payment.
-3. Under **Evidence received**, click **Use a fictional metering-operator reply**, then **Add manual evidence**.
-4. Click **Prepare offline investigation**. Expected: **Saved real AI proposal · one recorded run**. If you prepare before adding the evidence, you get the template instead, because the input differs.
-5. Write a note and click **Record review**, then **Record explanation sent**, then **Record customer confirmation**.
+The demo shows one step per screen. Each screen says what it shows; **Back** reviews earlier steps and **Start over** runs it again.
 
-Expected: the dispute is closed, the timeline lists every step, and the payment still shows "Not sent · not paid". **Reset demo** starts over. The same flow runs locally with `npm ci` and `npm run dev:workbench` in `paypal-solar`, at `/coop?source=rehearsal`.
+1. Click **Start the demo**. Haus 7's message is shown with the bill split: 192.6 kWh metered = 95.1 kWh shared solar on this bill + 97.5 kWh from the household's own supplier. Click **Next**.
+2. Click **Add this reply as evidence** (a fictional metering-operator reply). It is labelled manual, not verified by the system. Click **Next**.
+3. Click **Ask the AI agent**. Expected: **Saved real AI proposal · one recorded run**, with an unsent reply draft. Click **Next**.
+4. Click **Record review**, **Record explanation sent** and **Record customer confirmation**, each followed by **Next**. A suggested note is filled in; you can edit it.
+
+Expected: "Done: the dispute is closed", with the payment still "Not sent · not paid" and the case timeline. The same flow runs locally with `npm ci` and `npm run dev:workbench` in `paypal-solar`, at `/coop?source=rehearsal`.
 
 Other pages:
 - `http://127.0.0.1:3007/coop?source=evidence`: archived sandbox evidence (read-only, 10 of 10 matched).
