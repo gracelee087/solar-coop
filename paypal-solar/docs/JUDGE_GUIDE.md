@@ -24,7 +24,7 @@ Expected: 12/12 accepted actions for the saved model run and 8/12 for fixed rule
 
 ## 4. Follow one customer dispute end to end
 
-Fastest path, no installation: https://solar-coop.onrender.com/coop/demo (or `/coop/demo` locally). Click **Start the demo** and follow the screens: one step per screen, each saying what it shows, with **Start over** at any time. Adding the fictional metering-operator reply before **Ask the AI agent** loads the saved real AI proposal, recorded once on exactly that input (`experiments/h07-dispute`, with criteria and judgement). The steps below use the local rehearsal instead.
+Fastest path, no installation: https://solar-coop.onrender.com/coop/demo (or `/coop/demo` locally). Click **Start the demo** to inspect the month's drafts and archived PayPal results, then follow the separate fictional Haus 7 case. There is one step per screen, with **Start over** at any time. Adding the fictional metering-operator reply before **Load saved AI proposal** loads the proposal recorded once on exactly that input (`experiments/h07-dispute`, with criteria and judgement); it makes no live model call. The final screen says **Demo complete: the dispute is closed**, while the rehearsal payment remains unpaid. No new month is settled. The steps below use the full local operator rehearsal instead.
 
 Open `/coop?source=rehearsal`. On a fresh installation, click **Start offline June rehearsal**. Existing rehearsals are preserved. Select **Haus 7** and enter a reviewer name.
 
@@ -48,4 +48,4 @@ For the full test suite, first run `npm run fetch-data:h25`, as explained in the
 
 ## What these screens do not establish
 
-No live bank connection, real household meter integration, production payment eligibility, measured human time savings or perfect model reasoning is claimed. Public production mode is read-only unless separately authenticated; the interactive walkthrough uses local development mode. The earlier `/energy`, `/demo` and correction prototypes are not required to judge the main operator flow.
+No live bank connection, real household meter integration, production payment eligibility, measured human time savings or perfect model reasoning is claimed. The public operator desk is read-only; `/coop/demo` allows only isolated fictional case actions, with no payment approval, execution or live model calls. The full operator rehearsal runs locally. The earlier `/energy`, `/demo` and correction prototypes are not required to judge the main operator flow.

@@ -1,6 +1,6 @@
-# Solar Co-op — an operator desk for community energy payments
+# Solar Co-op — collect bills, pay producers, and reconcile community energy payments with PayPal
 
-Solar Co-op connects a community operator's monthly energy allocation to consumer bills, producer payouts and payment exception review. Code calculates money, AI proposes, a person approves, and PayPal processes sandbox transactions.
+Solar Co-op helps energy-sharing operators manage monthly settlement. Code calculates amounts, AI prepares drafts and proposes checks for disputes, and people approve payment actions. PayPal Invoicing collects from consumers and PayPal Payouts pays producers (sandbox); the desk reconciles both against its drafts and traces customer disputes. Bank transaction import is not implemented.
 
 The main submission is the **10-household operator workflow**: three producers and seven consumers. The older three-neighbour prototype is preserved for development history; it is not the judge walkthrough.
 

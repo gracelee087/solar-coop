@@ -2,6 +2,13 @@
 
 This record describes the local submission-readiness changes. It is not a claim that publication, a clean installation or the final video is complete.
 
+Latest demo review (after `eceb525`, 2026-10-15): completion now distinguishes the closed fictional dispute from archived PayPal settlement results. The AI step explicitly loads a saved proposal without a model call. Review notes use the API's 600-character limit and can be cleared without restoring suggested text.
+
+- `npm run test:in-process`: 417 tests in 49 files passed. Standard `npm test` could not start in this sandbox because the esbuild config loader returned `spawn EPERM`; this is not a standard-run pass.
+- `npx --offline tsc --noEmit` and `npm run lint`: passed. `npm run build`: passed in a fresh source copy using linked installed dependencies, without `.env`, runtime `runs/` or an existing `.next`; this was not a fresh dependency installation.
+- Local production preview on port 3032: start → evidence → saved AI proposal → review → explanation → customer confirmation passed over HTTP. A 600-character note was accepted and 601 characters rejected. The final page did not claim that the month was settled; the case payment stayed `not_sent`, and `readyToClose` stayed false. Operator writes still returned 403.
+- No new visual browser inspection: the environment's automatic approval policy rejected launching headless Edge. The HTTP checks above do not establish visual layout or browser interaction quality. The existing port 3020 server and hosted deployment were not updated.
+
 | Check | Observed result |
 |---|---|
 | `npm run test:in-process` | 371 tests in 44 files passed. Includes four new archive/re-score/UI checks. Uses the explicitly separate TypeScript in-process runner. |

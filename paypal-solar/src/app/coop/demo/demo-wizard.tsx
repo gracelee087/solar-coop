@@ -6,19 +6,28 @@ import styles from "./demo-wizard.module.css";
 
 // Same value as src/lib/coop/demo.ts (not imported: that module uses the file system).
 const DEMO_DRAFT = "bill-ST-202606-H07";
-const TOTAL = 6;
+/** Screens 2–9 are the eight steps; 1 is the start and 10 the end. */
+const TOTAL = 8;
+const LAST = TOTAL + 2;
 const kwh = (wh: number) => (wh / 1000).toFixed(1);
+const eur = (cents: number) => `€${(cents / 100).toFixed(2)}`;
 
-/** The first screen whose step is not done yet, derived only from the Haus 7 case (8 = finished). */
-export function firstOpenScreen(item: WorkItem | undefined, billRead: boolean): number {
+/** One archived PayPal sandbox observation, as shown on the demo's PayPal screen. */
+export interface ArchiveRow { name: string; kind: "bill" | "payout"; amountEur: string; externalStatus: string; matched: boolean }
+
+/**
+ * The first screen not done yet. Screens 2–4 only need reading (`readUpTo` = last one passed);
+ * the rest follow the Haus 7 case state.
+ */
+export function firstOpenScreen(item: WorkItem | undefined, readUpTo: number): number {
   if (!item) return 1;
   const w = item.work;
-  if (w.status.startsWith("closed")) return 8;
-  if (!w.evidence?.length) return billRead ? 3 : 2;
-  if (!w.proposal || item.proposalStale) return 4;
-  if (w.status === "open") return 5;
-  if (w.status === "explained_awaiting_reply") return 7;
-  return 6;
+  if (w.status.startsWith("closed")) return LAST;
+  if (!w.evidence?.length) return Math.min(Math.max(readUpTo + 1, 2), 5);
+  if (!w.proposal || item.proposalStale) return 6;
+  if (w.status === "open") return 7;
+  if (w.status === "explained_awaiting_reply") return 9;
+  return 8;
 }
 
 export function evidenceText(item: WorkItem, period: string) {
@@ -27,23 +36,23 @@ export function evidenceText(item: WorkItem, period: string) {
 
 export function suggestedNote(item: WorkItem, screen: number) {
   const a = item.chain?.allocation;
-  if (screen === 5) return "Checked the split against the bill check and the metering operator's reply.";
-  if (screen === 6)
+  if (screen === 7) return "Checked the split against the bill check and the metering operator's reply.";
+  if (screen === 8)
     return a
       ? `Sent the explanation: ${kwh(a.receivedWh)} kWh shared solar on this bill, ${kwh(a.residualWh)} kWh from the household's own supplier.`
       : "Sent the explanation of the bill.";
   return "Customer replied: understood, no further questions.";
 }
 
-export default function DemoWizard({ initial }: { initial: WorkbenchView | null }) {
+export default function DemoWizard({ initial, archive = [] }: { initial: WorkbenchView | null; archive?: ArchiveRow[] }) {
   const [view, setView] = useState(initial);
   const item = view?.items.find((i) => i.draftId === DEMO_DRAFT);
-  const [billRead, setBillRead] = useState(false);
-  const [screen, setScreen] = useState(() => firstOpenScreen(item, false));
-  const [note, setNote] = useState("");
+  const [readUpTo, setReadUpTo] = useState(1);
+  const [screen, setScreen] = useState(() => firstOpenScreen(item, 1));
+  const [note, setNote] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const open = firstOpenScreen(item, billRead);
+  const open = firstOpenScreen(item, readUpTo);
   const period = view?.desk.period ?? "2026-06";
 
   async function post(body: object) {
@@ -64,45 +73,101 @@ export default function DemoWizard({ initial }: { initial: WorkbenchView | null 
   const act = (action: string, extra: object = {}) => post({ action, version: item!.version, ...extra });
   async function startOver(first: boolean) {
     if (await post({ action: first ? "start" : "reset" })) {
-      setBillRead(false);
-      setNote("");
+      setReadUpTo(1);
+      setNote(null);
       setScreen(2);
     }
   }
   const next = () => {
-    if (screen === 2) setBillRead(true);
-    setNote("");
+    if (screen <= 4) setReadUpTo(Math.max(readUpTo, screen));
+    setNote(null);
     setScreen(screen + 1);
   };
   const done = screen < open;
 
   const c = item?.chain;
   const p = item?.work.proposal;
+  const bills = view?.items.filter((i) => i.kind === "bill") ?? [];
+  const payouts = view?.items.filter((i) => i.kind === "payout") ?? [];
   let title = "";
+  let tag = "";
   let body: React.ReactNode = null;
   let action: React.ReactNode = null;
   let learn = "";
   if (screen === 1 || !item) {
-    title = "One customer dispute, end to end";
+    title = "One month of community energy settlement";
     body = (
       <>
-        <p className={styles.lead}>
-          Solar Co-op helps energy-sharing operators check bills, reconcile PayPal payments and handle customer disputes.
+        <p className={styles.lead}>Collect bills, pay producers, and reconcile community energy payments with PayPal.</p>
+        <p>
+          Solar Co-op helps energy-sharing operators manage monthly settlement. Code calculates amounts, AI prepares
+          drafts and proposes checks for disputes, and people approve payment actions.
         </p>
         <p>
-          In this demo you are the operator. Haus 7 says its meter shows more than its bill. In seven short steps you
-          check the bill, add evidence, read the AI agent&apos;s proposal and record the outcome.
+          You are the operator of a ten-household group. You see this month&apos;s bills and payouts, what PayPal collected
+          and paid in our saved sandbox run, and how one customer dispute is handled.
         </p>
         <p className={styles.small}>Your own offline copy. Fictional data. No PayPal call, no live AI call, nothing is sent.</p>
       </>
     );
     action = (
       <button className={styles.primary} disabled={busy} onClick={() => startOver(true)}>
-        Start the demo →
+        {busy ? "Preparing your copy… this can take a few seconds" : "Start the demo →"}
       </button>
     );
   } else if (screen === 2) {
-    title = "Haus 7 doubts its bill";
+    title = "This month: who pays, who gets paid";
+    body = (
+      <>
+        <div className={styles.split2}>
+          <div><small>CONSUMER BILLS → PAYPAL INVOICES</small><b>{bills.length} bills · {eur(view!.desk.totals.billedCents)}</b></div>
+          <div><small>PRODUCER PAYOUTS → PAYPAL PAYOUTS</small><b>{payouts.length} payouts · {eur(view!.desk.totals.payoutCents)}</b></div>
+        </div>
+        <details className={styles.more}>
+          <summary>All {bills.length + payouts.length} drafts</summary>
+          <ol>{[...bills, ...payouts].map((i) => <li key={i.draftId}>{i.name} · {i.kind === "bill" ? "bill" : "payout"} · {i.kWh} kWh · €{i.amountEur}</li>)}</ol>
+        </details>
+        <p>
+          Calculated in code from the June quarter-hour meter data and the allocation rule. Every draft waits for a
+          person&apos;s approval. In our recorded run, an AI agent prepared these ten drafts through tools; it had no
+          approval or execution tool.
+        </p>
+      </>
+    );
+    learn = "Code calculates every amount. A person approves each payment action before anything is sent.";
+  } else if (screen === 3) {
+    const paid = archive.filter((r) => r.kind === "bill" && r.externalStatus === "PAID").length;
+    const paidOut = archive.filter((r) => r.kind === "payout" && r.externalStatus === "SUCCESS").length;
+    const matched = archive.filter((r) => r.matched).length;
+    const nBills = archive.filter((r) => r.kind === "bill").length;
+    const nPayouts = archive.length - nBills;
+    title = "PayPal collects and pays out";
+    tag = "SAVED PAYPAL SANDBOX RUN · ARCHIVED RECORDS · NO NEW PAYPAL CALL";
+    body = (
+      <>
+        <div className={styles.split2}>
+          <div>
+            <small>CONSUMERS PAY THE INVOICE</small>
+            <b>{paid} of {nBills} PAID</b>
+            <p className={styles.small}>PayPal e-mails the invoice. Consumers pay with a PayPal account or by debit or credit card.</p>
+          </div>
+          <div>
+            <small>PRODUCERS RECEIVE A PAYOUT</small>
+            <b>{paidOut} of {nPayouts} SUCCESS</b>
+            <p className={styles.small}>Sent to their e-mail. They need a PayPal account to claim it; unclaimed payouts return after 30 days.</p>
+          </div>
+        </div>
+        <p className={styles.check}>✓ {matched} of {archive.length} matched to the drafts by amount, statement reference and status.</p>
+        <p className={styles.small}>
+          Collection and payouts are separate actions a person approves. Payouts do not wait for invoices, and collected
+          money is not distributed automatically.
+        </p>
+      </>
+    );
+    learn = "PayPal moves the money in both directions; the desk checks every result against its own drafts.";
+  } else if (screen === 4) {
+    title = "When something goes wrong: Haus 7 doubts its bill";
+    tag = "A SEPARATE FICTIONAL CASE · OFFLINE REHEARSAL · NOT ONE OF THE ARCHIVED PAYMENTS";
     body = (
       <>
         <blockquote className={styles.quote}>“{item.work.messages[0]?.text}”</blockquote>
@@ -119,8 +184,7 @@ export default function DemoWizard({ initial }: { initial: WorkbenchView | null 
       </>
     );
     learn = "The meter total is not the billed energy. Only the shared solar part is on this bill.";
-    action = done ? null : <button className={styles.primary} onClick={next}>Next →</button>;
-  } else if (screen === 3) {
+  } else if (screen === 5) {
     const ev = item.work.evidence?.[0];
     title = "Ask the metering operator";
     body = (
@@ -135,8 +199,8 @@ export default function DemoWizard({ initial }: { initial: WorkbenchView | null 
         Add this reply as evidence
       </button>
     );
-  } else if (screen === 4) {
-    title = "The AI agent proposes";
+  } else if (screen === 6) {
+    title = "Review the recorded AI proposal";
     body = done && p ? (
       <>
         <p className={styles.tag}>{p.saved ? "SAVED REAL AI PROPOSAL · ONE RECORDED RUN" : "CODE TEMPLATE · NOT AI"}</p>
@@ -156,42 +220,53 @@ export default function DemoWizard({ initial }: { initial: WorkbenchView | null 
         </p>
       </>
     ) : (
-      <p>The agent reads the statement, the bill check and both messages, then drafts checks and a reply.</p>
+      <p>
+        In the recorded run, the agent read the statement, the bill check, the customer message and the manual evidence.
+        Load its saved checks and reply draft for this same input. No model will be called.
+      </p>
     );
     learn = "The AI drafts. Nothing is sent, and a person decides next.";
     action = done ? null : (
       <button className={styles.primary} disabled={busy} onClick={() => act("prepare")}>
-        Ask the AI agent
+        Load saved AI proposal
       </button>
     );
-  } else if (screen >= 5 && screen <= 7) {
+  } else if (screen >= 7 && screen <= 9) {
     const cfg = {
-      5: { title: "You review it", button: "Record review", act: "review", learn: "A person decides. The AI only proposed." },
-      6: { title: "You explain the bill", button: "Record explanation sent", act: "explain", learn: "You record that you explained it. The app sends nothing." },
-      7: { title: "Haus 7 answers", button: "Record customer confirmation", act: "confirm", learn: "Closing the dispute does not mark the bill paid." },
-    }[screen as 5 | 6 | 7];
+      7: { title: "You review it", button: "Record review", act: "review", learn: "A person decides. The AI only proposed." },
+      8: { title: "You explain the bill", button: "Record explanation sent", act: "explain", learn: "You record that you explained it. The app sends nothing." },
+      9: { title: "Haus 7 answers", button: "Record customer confirmation", act: "confirm", learn: "Closing the dispute does not mark the bill paid." },
+    }[screen as 7 | 8 | 9];
     title = cfg.title;
     learn = cfg.learn;
+    const draftNote = note ?? suggestedNote(item, screen);
     const last = item.work.history.at(-1);
     body = done ? (
       <div className={styles.card}><small>RECORDED</small><p>{item.work.history.find((h) => h.event === cfg.act)?.detail ?? last?.detail}</p></div>
     ) : (
-      <textarea className={styles.note} value={note || suggestedNote(item, screen)} maxLength={2000} onChange={(e) => setNote(e.target.value)} aria-label="Your note" />
+      <>
+        <textarea className={styles.note} value={draftNote} maxLength={600} onChange={(e) => setNote(e.target.value)} aria-label="Your note" aria-describedby="note-limit" />
+        <p id="note-limit" className={styles.small}>{draftNote.length}/600 characters. Edit the suggested note before recording it.</p>
+      </>
     );
     action = done ? null : (
-      <button className={styles.primary} disabled={busy} onClick={() => act(cfg.act, { text: note || suggestedNote(item, screen) })}>
+      <button className={styles.primary} disabled={busy || !draftNote.trim()} onClick={() => act(cfg.act, { text: draftNote })}>
         {cfg.button}
       </button>
     );
   } else {
-    title = "Done: the dispute is closed";
+    title = "Demo complete: the dispute is closed";
     body = (
       <>
         <div className={styles.split2}>
-          <div><small>DISPUTE</small><b>Closed · customer confirmed</b></div>
-          <div className={styles.amber}><small>PAYMENT</small><b>Not sent · not paid</b></div>
+          <div><small>HAUS 7 DISPUTE</small><b>{item.work.status === "closed_customer_confirmed" ? "Closed · customer confirmed" : "Closed after operator review · no customer confirmation"}</b></div>
+          <div className={styles.amber}><small>HAUS 7 PAYMENT (REHEARSAL)</small><b>{item.payment.status === "not_sent" ? "Not sent · not paid" : item.payment.label}</b></div>
         </div>
-        <p>Two separate statuses: closing a dispute never marks a bill paid. Only a reconciled PayPal record does.</p>
+        <p>
+          You reviewed the archived PayPal payment results, then handled a separate fictional dispute. This rehearsal
+          sent no invoices or payouts and did not settle a new month.
+        </p>
+        <p>Closing a dispute never marks a bill paid. Payment confirmation comes from a matching PayPal record.</p>
         <details className={styles.more}>
           <summary>Case timeline ({item.work.history.length} steps)</summary>
           <ol>{item.work.history.map((h, i) => <li key={i}><b>{h.event}</b> · {h.detail}</li>)}</ol>
@@ -212,21 +287,23 @@ export default function DemoWizard({ initial }: { initial: WorkbenchView | null 
       </header>
       <section className={styles.panel}>
         {item && screen > 1 && (
-          <div className={styles.progress} aria-label={screen > TOTAL + 1 ? "Finished" : `Step ${screen - 1} of ${TOTAL}`}>
+          <div className={styles.progress} aria-label={screen === LAST ? "Finished" : `Step ${screen - 1} of ${TOTAL}`}>
             {Array.from({ length: TOTAL }, (_, i) => <i key={i} className={i < screen - 1 ? styles.on : undefined} />)}
-            <span>{screen > TOTAL + 1 ? "Finished" : `Step ${screen - 1} of ${TOTAL}`}</span>
+            <span>{screen === LAST ? "Finished" : `Step ${screen - 1} of ${TOTAL}`}</span>
           </div>
         )}
+        {tag && <p className={styles.tag}>{tag}</p>}
         <h1>{title}</h1>
         {body}
         {learn && <p className={styles.learn}><b>What this shows:</b> {learn}</p>}
+        {busy && screen > 1 && <p role="status" className={styles.small}>Working… this can take a few seconds.</p>}
         {error && <p role="alert" className={styles.error}>{error}</p>}
         <div className={styles.nav}>
-          {item && screen > 2 ? <button className={styles.ghost} onClick={() => { setNote(""); setScreen(screen - 1); }}>← Back</button> : <span />}
+          {item && screen > 2 ? <button className={styles.ghost} disabled={busy} onClick={() => { setNote(null); setScreen(screen - 1); }}>← Back</button> : <span />}
           {action}
-          {done && screen < 8 && <button className={styles.primary} onClick={next}>Next →</button>}
-          {item && (screen === 8 ? (
-            <button className={styles.primary} disabled={busy} onClick={() => startOver(false)}>↺ Start over</button>
+          {item && screen > 1 && screen < LAST && (done || screen <= 4) && <button className={styles.primary} disabled={busy} onClick={next}>Next →</button>}
+          {item && (screen === LAST ? (
+            <button className={styles.primary} disabled={busy} onClick={() => startOver(false)}>{busy ? "Preparing…" : "↺ Start over"}</button>
           ) : screen > 1 ? (
             <button className={styles.ghost} disabled={busy} onClick={() => startOver(false)}>↺ Start over</button>
           ) : null)}
